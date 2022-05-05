@@ -1,7 +1,6 @@
 import React from "react";
 import { FaSearch, FaRegUserCircle } from "react-icons/fa";
 import { AiOutlineHeart } from "react-icons/ai";
-import UserNavHeader from "./UserNavHeader";
 
 export default function MobileNavHeader() {
   return (

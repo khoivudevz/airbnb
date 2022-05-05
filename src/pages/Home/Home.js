@@ -1,4 +1,5 @@
 import React from "react";
+import SearchBar from "../../Components/SearchBar/SearchBar";
 import MobileNavHeader from "../../Components/NavHeader/MobileNavHeader";
 import NavHeader from "../../Components/NavHeader/NavHeader";
 import DesktopNavResponsive from "../../HOC/DesktopNavResponsive";
@@ -13,7 +14,7 @@ export default function Home() {
       <MobileNavReponsive>
         <MobileNavHeader />
       </MobileNavReponsive>
-      abc
+      <SearchBar />
     </div>
   );
 }

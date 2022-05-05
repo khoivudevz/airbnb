@@ -1,8 +1,10 @@
 import "antd/dist/antd.css";
+import "./App.css";
+import Home from "./pages/Home/Home";
 function App() {
   return (
     <div className="App">
-      <p className="text-3xl text-red-500 text-center">Hello World!</p>
+      <Home />
     </div>
   );
 }

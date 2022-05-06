@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 
 export default function SearchBar() {
   return (
-    <div className="hidden md:block w-screen h-[157px] bg-black">
+    <div className="hidden md:block h-[157px] bg-transparent top-[130px] z-10 absolute w-full">
       <div className="w-full h-full flex justify-center">
         <div className="w-[870px] h-[75px] bg-white rounded-full">
           <div className="w-full h-full grid grid-cols-11 fontFace">

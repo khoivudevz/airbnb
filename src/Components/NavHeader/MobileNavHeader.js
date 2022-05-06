@@ -5,7 +5,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 export default function MobileNavHeader() {
   return (
     <>
-      <div className="w-screen h-20 bg-black">
+      <div className=" h-20 ">
         <div className="container mx-auto w-full h-full">
           <div className="flex items-center justify-center w-full h-full">
             <div className="bg-white rounded-full w-11/12 h-4/6">
@@ -17,7 +17,7 @@ export default function MobileNavHeader() {
           </div>
         </div>
       </div>
-      <div className="w-screen h-20 bg-white absolute bottom-0 ">
+      <div className="w-full h-20 bg-white absolute bottom-0 ">
         <div className="container mx-auto w-full h-full">
           <div className="grid grid-cols-3 w-full h-full fontFace">
             <div className="flex flex-col items-center justify-center">

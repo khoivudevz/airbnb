@@ -5,7 +5,7 @@ import { BiWorld } from "react-icons/bi";
 import UserNavHeader from "./UserNavHeader";
 export default function NavHeader() {
   return (
-    <div className="w-screen h-20 bg-black">
+    <div className="h-20">
       <div className="container mx-auto w-full h-full">
         <div className="flex items-center justify-between w-full h-full">
           <div className="flex items-center justify-center">

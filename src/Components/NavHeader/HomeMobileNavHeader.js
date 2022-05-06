@@ -2,7 +2,7 @@ import React from "react";
 import { FaSearch, FaRegUserCircle } from "react-icons/fa";
 import { AiOutlineHeart } from "react-icons/ai";
 
-export default function MobileNavHeader() {
+export default function HomeMobileNavHeader() {
   return (
     <>
       <div className=" h-20 ">

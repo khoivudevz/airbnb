@@ -1,20 +1,19 @@
 import React from "react";
 import SearchBar from "../../Components/SearchBar/SearchBar";
-import MobileNavHeader from "../../Components/NavHeader/MobileNavHeader";
-import NavHeader from "../../Components/NavHeader/NavHeader";
+import HomeMobileNavHeader from "../../Components/NavHeader/HomeMobileNavHeader";
+import HomeNavHeader from "../../Components/NavHeader/HomeNavHeader";
 import DesktopNavResponsive from "../../HOC/DesktopNavResponsive";
 import MobileNavReponsive from "../../HOC/MobileNavReponsive";
 import image from "../../assets/images/933-1600x700.jpg";
-import Footer from "../../Components/Footer/Footer";
 export default function Home() {
   return (
     <div className="relative">
       <div className="bg-black">
         <DesktopNavResponsive>
-          <NavHeader />
+          <HomeNavHeader />
         </DesktopNavResponsive>
         <MobileNavReponsive>
-          <MobileNavHeader />
+          <HomeMobileNavHeader />
         </MobileNavReponsive>
         <SearchBar />
         <div className="h-[1000px] ">
@@ -130,7 +129,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

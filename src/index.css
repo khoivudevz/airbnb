@@ -26,6 +26,11 @@ p,
 pre {
   margin-bottom: 0 !important;
 }
+.ant-btn-primary {
+  background: #ff385c !important;
+  border-color: #ff385c !important;
+  border-radius: 20px !important;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

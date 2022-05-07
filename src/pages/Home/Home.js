@@ -35,7 +35,7 @@ export default function Home() {
         <p className="text-4xl font-bold">
           Cảm hứng cho chuyến đi tiếp theo của bạn
         </p>
-        <div className="flex flex-col items-center justify-center sm:grid lg:p-[107px] xl:p-0 sm:grid-cols-2 xl:grid-cols-4 gap-20 my-20">
+        <div className="flex flex-col items-center justify-center sm:grid lg:p-[107px] xl:p-0 sm:grid-cols-2 xl:grid-cols-4 gap-x-20 my-20">
           <div className="w-[350px] sm:w-[336px] lg:w-[350px] h-[504px] rounded-xl ">
             <div className="w-full h-1/2">
               <img
@@ -94,7 +94,7 @@ export default function Home() {
           </div>
         </div>
         <p className="text-4xl font-bold">Khám phá Trải nghiệm Airbnb</p>
-        <div className="flex flex-col items-center justify-center md:grid md:grid-cols-2 gap-x-20 my-20">
+        <div className="flex flex-col items-center justify-center md:grid md:grid-cols-2 gap-x-32 my-20">
           <div className="w-[311px] h-[464px] lg:w-[459px] lg:h-[566px] xl:w-[790px] xl:h-[800px] relative">
             <img
               src="https://a0.muscache.com/im/pictures/c2adcb16-6c3f-4041-86a1-afa9c303c500.jpg?im_w=720"

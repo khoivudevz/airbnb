@@ -1,22 +1,31 @@
 import React from "react";
 import { Form, Input, Button } from "antd";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import { userServices } from "../../services/userServices";
 import { useDispatch } from "react-redux";
 import { setUserInfor } from "../../reducers/userSlice";
 import { localStorageServices } from "../../services/localStorageServices";
+
 export default function Login() {
+  let navigate = useNavigate();
   const dispatch = useDispatch();
   const onFinish = (values) => {
-    console.log("Success:", values);
     userServices
       .logIn(values)
       .then((res) => {
-        console.log("res", res);
         dispatch(setUserInfor(res.data.user));
         localStorageServices.setUserInfor(res.data.user);
+        Swal.fire(
+          "Đăng nhập thành công!",
+          "Di chuyển đến trang chủ!",
+          "success"
+        );
+        navigate("/");
       })
       .catch((err) => {
         console.log("err", err);
+        Swal.fire("Đăng nhập thất bạt!", `Lỗi: ${err}`, "error");
       });
   };
 
@@ -24,13 +33,13 @@ export default function Login() {
     console.log("Failed:", errorInfo);
   };
   return (
-    <div className="container mx-auto fontFace my-20">
+    <div className="container mx-auto fontFace my-32">
       <div className="flex items-center justify-center">
-        <div className="w-[556px] h-[700px]">
+        <div className="w-[556px] h-[700px] ">
           <img
             src="https://i.pinimg.com/564x/4f/4f/6d/4f4f6d78eb37fbeb995efbadf7670fea.jpg"
             alt="photo"
-            className="object-cover w-full h-full rounded-l-xl"
+            className="object-cover w-full h-full rounded-l-xl shadow-xl"
           />
         </div>
         <div className="w-[556px] h-[700px] flex items-center justify-center shadow-xl rounded-r-xl">
@@ -85,6 +94,14 @@ export default function Login() {
                 Đăng nhập
               </Button>
             </Form.Item>
+            <Link to="/signup">
+              <div>
+                <p>
+                  Chưa có tài khoản? Đi đến trang{" "}
+                  <span className="font-bold">đăng ký</span>
+                </p>
+              </div>
+            </Link>
           </Form>
         </div>
       </div>

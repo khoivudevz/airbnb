@@ -21,5 +21,6 @@ const userSlice = createSlice({
     },
   },
 });
-export const { setUserInfor, setUserAvatar } = userSlice.actions;
+export const { setUserInfor, setUserAvatar, removeUserInfor } =
+  userSlice.actions;
 export default userSlice.reducer;

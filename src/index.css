@@ -26,10 +26,19 @@ p,
 pre {
   margin-bottom: 0 !important;
 }
+a {
+  color: black !important;
+}
+input:focus {
+  outline: none !important;
+}
 .ant-btn-primary {
   background: #ff385c !important;
   border-color: #ff385c !important;
   border-radius: 20px !important;
+}
+.ant-select-selector {
+  display: none !important;
 }
 @tailwind base;
 @tailwind components;

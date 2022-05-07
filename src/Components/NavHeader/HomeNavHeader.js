@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import UserNavHeaderLogin from "./UserNavHeaderLogin";
 export default function HomeNavHeader() {
-  let userInfor = useSelector((state) => state.userSlice.test);
+  let userInfor = useSelector((state) => state.userSlice.userInfor);
   return (
     <div className="h-20">
       <div className="container mx-auto w-full h-full">
@@ -27,7 +27,7 @@ export default function HomeNavHeader() {
               <p>Trở thành chủ nhà</p>
               <BiWorld size={25} />
             </div>
-            {userInfor ? <UserNavHeader /> : <UserNavHeaderLogin />}
+            {userInfor ? <UserNavHeaderLogin /> : <UserNavHeader />}
           </div>
         </div>
       </div>

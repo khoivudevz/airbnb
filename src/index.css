@@ -37,9 +37,7 @@ input:focus {
   border-color: #ff385c !important;
   border-radius: 20px !important;
 }
-.ant-select-selector {
-  display: none !important;
-}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

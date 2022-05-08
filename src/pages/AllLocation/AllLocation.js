@@ -7,6 +7,7 @@ import { CgGym } from "react-icons/cg";
 import { HiOutlineDesktopComputer } from "react-icons/hi";
 import { AiOutlineWifi } from "react-icons/ai";
 import { MdAttachMoney } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 export default function AllLocation() {
   const [roomList, setRoomList] = useState(null);
@@ -30,94 +31,96 @@ export default function AllLocation() {
         console.log("err", err);
       });
   }, []);
-  console.log("roomList", roomList);
   return (
     <div className="pt-20">
       <div className="flex">
         <div className="m-10 space-y-2">
           {currentPosts?.map((room) => {
             return (
-              <div className=" shadow-md flex items-center justify-center lg:justify-start fontFace md:py-5">
-                <div className="flex flex-col md:flex-row md:space-x-5">
-                  <div className="xl:w-[300px] xl:h-[200px] ">
-                    <img
-                      src={
-                        room?.image
-                          ? room?.image
-                          : "https://airbnb.cybersoft.edu.vn/public/images/room/1634310452881_viendongsaigon.jpg"
-                      }
-                      alt="room"
-                      className="object-cover w-full h-full rounded-xl"
-                    />
-                  </div>
-                  <div className="flex flex-col lg:w-[800px] xl:w-[500px] xl:h-[200px] space-y-3">
-                    <p className="text-xl w-full ">{room?.name}</p>
-                    <div className="flex flex-wrap">
-                      <div className="flex items-center space-x-2">
-                        <FaUserAlt size={10} /> <div>{room.guests} khách</div>
-                        <BsDot />
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <FaBath size={10} />
-                        <div>{room.bath} phòng tắm</div>
-                        <BsDot />
-                      </div>
-                      <div>
-                        {room.gym ? (
-                          <div className="flex items-center space-x-2">
-                            <CgGym size={10} /> <div>phòng tập</div>
-                            <BsDot />
-                          </div>
-                        ) : (
-                          <></>
-                        )}
-                      </div>
-                      <div>
-                        {room.hotTub ? (
-                          <div className="flex items-center space-x-2">
-                            <FaHotTub size={10} /> <div>Bể sục</div>
-                            <BsDot />
-                          </div>
-                        ) : (
-                          <></>
-                        )}
-                      </div>
-                      <div>
-                        {room.wifi ? (
-                          <div className="flex items-center space-x-2">
-                            <AiOutlineWifi size={10} /> <div>Wifi</div>
-                            <BsDot />
-                          </div>
-                        ) : (
-                          <></>
-                        )}
-                      </div>
-                      <div>
-                        {room.cableTV ? (
-                          <div className="flex items-center space-x-2">
-                            <HiOutlineDesktopComputer size={10} /> <div>TV</div>
-                            <BsDot />
-                          </div>
-                        ) : (
-                          <></>
-                        )}
-                      </div>
+              <Link to={`/room/${room._id}`}>
+                <div className=" shadow-md flex items-center justify-center lg:justify-start fontFace md:py-5">
+                  <div className="flex flex-col md:flex-row md:space-x-5">
+                    <div className="xl:w-[300px] xl:h-[200px] ">
+                      <img
+                        src={
+                          room?.image
+                            ? room?.image
+                            : "https://airbnb.cybersoft.edu.vn/public/images/room/1634310452881_viendongsaigon.jpg"
+                        }
+                        alt="room"
+                        className="object-cover w-full h-full rounded-xl"
+                      />
                     </div>
-                    <div>
-                      <p className="text-sm pt-5">{room.description}</p>
-                    </div>
-                    <div className="flex items-center justify-end">
-                      <div className="flex items-center">
-                        <MdAttachMoney size={30} />{" "}
-                        <p className="text-xl font-bold">
-                          {room?.price}
-                          <span className="font-thin text-lg">/ đêm</span>
-                        </p>
+                    <div className="flex flex-col lg:w-[800px] xl:w-[500px] xl:h-[200px] space-y-3">
+                      <p className="text-xl w-full ">{room?.name}</p>
+                      <div className="flex flex-wrap">
+                        <div className="flex items-center space-x-2">
+                          <FaUserAlt size={10} /> <div>{room.guests} khách</div>
+                          <BsDot />
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <FaBath size={10} />
+                          <div>{room.bath} phòng tắm</div>
+                          <BsDot />
+                        </div>
+                        <div>
+                          {room.gym ? (
+                            <div className="flex items-center space-x-2">
+                              <CgGym size={10} /> <div>phòng tập</div>
+                              <BsDot />
+                            </div>
+                          ) : (
+                            <></>
+                          )}
+                        </div>
+                        <div>
+                          {room.hotTub ? (
+                            <div className="flex items-center space-x-2">
+                              <FaHotTub size={10} /> <div>Bể sục</div>
+                              <BsDot />
+                            </div>
+                          ) : (
+                            <></>
+                          )}
+                        </div>
+                        <div>
+                          {room.wifi ? (
+                            <div className="flex items-center space-x-2">
+                              <AiOutlineWifi size={10} /> <div>Wifi</div>
+                              <BsDot />
+                            </div>
+                          ) : (
+                            <></>
+                          )}
+                        </div>
+                        <div>
+                          {room.cableTV ? (
+                            <div className="flex items-center space-x-2">
+                              <HiOutlineDesktopComputer size={10} />{" "}
+                              <div>TV</div>
+                              <BsDot />
+                            </div>
+                          ) : (
+                            <></>
+                          )}
+                        </div>
+                      </div>
+                      <div>
+                        <p className="text-sm pt-5">{room.description}</p>
+                      </div>
+                      <div className="flex items-center justify-end">
+                        <div className="flex items-center">
+                          <MdAttachMoney size={30} />{" "}
+                          <p className="text-xl font-bold">
+                            {room?.price}
+                            <span className="font-thin text-lg">/ đêm</span>
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
           <div className="flex items-center justify-center my-40">

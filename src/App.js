@@ -11,6 +11,7 @@ import DetailUser from "./pages/DetailUser/DetailUser";
 import AllLocation from "./pages/AllLocation/AllLocation";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import MobileUserSelect from "./pages/MobileUserSelect/MobileUserSelect";
+import DetailRoom from "./pages/DetailRoom/DetailRoom";
 function App() {
   return (
     <>
@@ -23,6 +24,10 @@ function App() {
           <Route path="/signup" element={<Layout Components={Signup} />} />
           <Route path="/user" element={<Layout Components={DetailUser} />} />
           <Route path="/rooms" element={<Layout Components={AllLocation} />} />
+          <Route
+            path="/room/:id"
+            element={<Layout Components={DetailRoom} />}
+          />
           <Route
             path="/muser"
             element={<Layout Components={MobileUserSelect} />}

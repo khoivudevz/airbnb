@@ -37,7 +37,10 @@ input:focus {
   border-color: #ff385c !important;
   border-radius: 20px !important;
 }
-
+.ant-picker {
+  padding: 16px 17px 17px !important;
+  border-radius: 10px !important;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

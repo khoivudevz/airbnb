@@ -38,7 +38,7 @@ export default function UserNavHeaderLogin() {
         },
         {
           label: (
-            <Link to="./user">
+            <Link to="/user">
               <div className="fontFace flex items-center justify-center space-x-2">
                 <GrUserSettings /> <p>Cài đặt tài khoản</p>
               </div>

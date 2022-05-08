@@ -41,7 +41,7 @@ export default function Signup() {
   return (
     <div className="container mx-auto fontFace my-32">
       <div className="flex items-center justify-center">
-        <div className="w-[556px] h-[800px] ">
+        <div className="hidden md:block w-[556px] h-[800px] ">
           <img
             src="https://i.pinimg.com/564x/28/93/f7/2893f7e127a456c655548bf2040ec41f.jpg"
             alt="photo"

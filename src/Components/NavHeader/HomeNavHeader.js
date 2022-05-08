@@ -8,7 +8,7 @@ import UserNavHeaderLogin from "./UserNavHeaderLogin";
 export default function HomeNavHeader() {
   let userInfor = useSelector((state) => state.userSlice.userInfor);
   return (
-    <div className="h-20">
+    <div className="h-20 bg-black">
       <div className="container mx-auto w-full h-full">
         <div className="flex items-center justify-between w-full h-full">
           <Link to="/">

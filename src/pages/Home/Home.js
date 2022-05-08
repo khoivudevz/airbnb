@@ -1,24 +1,14 @@
 import React from "react";
 import SearchBar from "../../Components/SearchBar/SearchBar";
-import HomeMobileNavHeader from "../../Components/NavHeader/HomeMobileNavHeader";
-import HomeNavHeader from "../../Components/NavHeader/HomeNavHeader";
-import DesktopNavResponsive from "../../HOC/DesktopNavResponsive";
-import MobileNavReponsive from "../../HOC/MobileNavReponsive";
 import image from "../../assets/images/933-1600x700.jpg";
 export default function Home() {
   return (
     <div className="relative">
       <div className="bg-black">
-        <DesktopNavResponsive>
-          <HomeNavHeader />
-        </DesktopNavResponsive>
-        <MobileNavReponsive>
-          <HomeMobileNavHeader />
-        </MobileNavReponsive>
         <SearchBar />
-        <div className="h-[1000px] ">
+        <div className="h-[400px] sm:h-[500px] lg:h-[700px] xl:h-[1000px] ">
           <div className="flex items-center justify-center h-full">
-            <div className="w-[315px] h-[600px] sm:w-[676px] sm:h-[560px] xl:w-[1600px] xl:h-[800px] lg:w-[940px] lg:h-[540px] relative">
+            <div className="w-[300px] h-[300px] sm:w-[700px] sm:h-[400px] xl:w-[1600px] xl:h-[800px] lg:w-[900px] lg:h-[540px] relative">
               <img
                 src={image}
                 alt="photo"
@@ -35,7 +25,7 @@ export default function Home() {
         <p className="text-4xl font-bold">
           Cảm hứng cho chuyến đi tiếp theo của bạn
         </p>
-        <div className="flex flex-col items-center justify-center sm:grid lg:p-[107px] xl:p-0 sm:grid-cols-2 xl:grid-cols-4 gap-x-20 my-20">
+        <div className="flex flex-col space-y-10 items-center justify-center sm:grid lg:p-[107px] xl:p-0 sm:grid-cols-2 xl:grid-cols-4 gap-x-20 my-20">
           <div className="w-[350px] sm:w-[336px] lg:w-[350px] h-[504px] rounded-xl ">
             <div className="w-full h-1/2">
               <img

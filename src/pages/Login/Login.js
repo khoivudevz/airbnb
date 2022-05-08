@@ -35,7 +35,7 @@ export default function Login() {
   return (
     <div className="container mx-auto fontFace my-32">
       <div className="flex items-center justify-center">
-        <div className="w-[556px] h-[700px] ">
+        <div className="hidden md:block w-[556px] h-[700px] ">
           <img
             src="https://i.pinimg.com/564x/4f/4f/6d/4f4f6d78eb37fbeb995efbadf7670fea.jpg"
             alt="photo"

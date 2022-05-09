@@ -25,7 +25,7 @@ export default function Home() {
         <p className="text-4xl font-bold">
           Cảm hứng cho chuyến đi tiếp theo của bạn
         </p>
-        <div className="flex flex-col space-y-10 items-center justify-center sm:grid lg:p-[107px] xl:p-0 sm:grid-cols-2 xl:grid-cols-4 gap-x-20 my-20">
+        <div className="flex flex-col space-y-10  items-center justify-center sm:grid sm:space-y-0 lg:p-[107px] xl:p-0 sm:grid-cols-2 xl:grid-cols-4 gap-x-20 my-20">
           <div className="w-[350px] sm:w-[336px] lg:w-[350px] h-[504px] rounded-xl ">
             <div className="w-full h-1/2">
               <img

@@ -38,7 +38,7 @@ export default function SearchBar() {
       <div className="w-full h-full flex justify-center">
         <div className="w-[870px] h-[75px] bg-white rounded-full relative">
           <div className="w-full h-full grid grid-cols-11 fontFace">
-            <div className="col-span-4 flex flex-col items-start justify-center pl-7">
+            <div className="col-span-4 flex flex-col items-start justify-center pl-7 ">
               <p className="font-bold">Địa điểm</p>
               <input
                 type="text"

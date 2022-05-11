@@ -22,7 +22,10 @@ function App() {
           <Route path="*" element={<Layout Components={NotFound} />} />
           <Route path="/login" element={<Layout Components={Login} />} />
           <Route path="/signup" element={<Layout Components={Signup} />} />
-          <Route path="/user" element={<Layout Components={DetailUser} />} />
+          <Route
+            path="/user/:id"
+            element={<Layout Components={DetailUser} />}
+          />
           <Route path="/rooms" element={<Layout Components={AllLocation} />} />
           <Route
             path="/room/:id"

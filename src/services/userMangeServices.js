@@ -6,7 +6,7 @@ export const userManageServices = {
     return axios({
       url: `${url}/api/users`,
       method: "POST",
-      header: {
+      headers: {
         token,
         tokenByClass,
       },
@@ -16,7 +16,7 @@ export const userManageServices = {
     return axios({
       url: `${url}/api/users/${_idUser}`,
       method: "GET",
-      header: {
+      headers: {
         tokenByClass,
       },
     });
@@ -25,7 +25,7 @@ export const userManageServices = {
     return axios({
       url: `${url}/api/users/pagination?skip=0&limit=3`,
       method: "GET",
-      header: {
+      headers: {
         tokenByClass,
       },
     });
@@ -34,7 +34,7 @@ export const userManageServices = {
     return axios({
       url: `${url}/api/users/${_idUser}`,
       method: "DELETE",
-      header: {
+      headers: {
         token,
         tokenByClass,
       },
@@ -44,7 +44,7 @@ export const userManageServices = {
     return axios({
       url: `${url}/api/users/${_idUser}`,
       method: "PUT",
-      header: {
+      headers: {
         token,
         tokenByClass,
       },

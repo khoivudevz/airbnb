@@ -2,7 +2,7 @@ import React from "react";
 import { BiMenu } from "react-icons/bi";
 import { Avatar } from "antd";
 import { Menu, Dropdown, Space } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { GrUserSettings } from "react-icons/gr";
 import { FiLogOut } from "react-icons/fi";
@@ -12,13 +12,15 @@ import { removeUserInfor } from "../../reducers/userSlice";
 
 export default function UserNavHeaderLogin() {
   let dispatch = useDispatch();
+  let navigate = useNavigate();
 
   let userInfor = useSelector((state) => state.userSlice.userInfor);
   let userAvatar = useSelector((state) => state.userSlice.avatar);
   let handleLogOut = () => {
     localStorageServices.removeUserInfor();
     dispatch(removeUserInfor());
-    Swal.fire("Đăng xuất", "Đã đăng xuất thành công!", "success");
+    Swal.fire("Đăng xuất thành công", "Trở về trang chủ!", "success");
+    navigate("/");
   };
   const menu = (
     <Menu
@@ -38,7 +40,7 @@ export default function UserNavHeaderLogin() {
         },
         {
           label: (
-            <Link to="/user">
+            <Link to={`/user/${userInfor._id}`}>
               <div className="fontFace flex items-center justify-center space-x-2">
                 <GrUserSettings /> <p>Cài đặt tài khoản</p>
               </div>

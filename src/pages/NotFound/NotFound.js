@@ -2,7 +2,7 @@ import React from "react";
 
 export default function NotFound() {
   return (
-    <div className="bg-white h-[700px]">
+    <div className="bg-white h-[700px] my-52">
       <div className="container mx-auto my-10">
         <div className="grid grid-cols-2">
           <div className="flex flex-col items-center justify-center fontFace">

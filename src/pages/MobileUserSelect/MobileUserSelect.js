@@ -1,22 +1,26 @@
 import React from "react";
 import { GrUserSettings, GrLogout } from "react-icons/gr";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { removeUserInfor } from "../../reducers/userSlice";
 import { localStorageServices } from "../../services/localStorageServices";
 
 export default function MobileUserSelect() {
+  let userInfor = useSelector((state) => state.userSlice.userInfor);
+  let navigate = useNavigate();
+
   const dispatch = useDispatch();
   let handleLogOut = () => {
     localStorageServices.removeUserInfor();
     dispatch(removeUserInfor());
-    Swal.fire("Đăng xuất", "Đã đăng xuất thành công!", "success");
+    Swal.fire("Đăng xuất thành công", "Trở về trang chủ!", "success");
+    navigate("/");
   };
   return (
     <div className="container mx-auto fontFace">
       <div className="flex flex-col items-center justify-center my-32 text-xl space-y-10">
-        <Link to="/user">
+        <Link to={`/user/${userInfor._id}`}>
           <div className="flex items-center justify-center space-x-3">
             <GrUserSettings size={25} />
             <p>Thông tin cá nhân</p>

@@ -26,7 +26,7 @@ export default function SearchBar() {
       .getLocationList()
       .then((res) => {
         setlocationList(res.data);
-        console.log("res", res.data);
+        // console.log("res", res.data);
       })
       .catch((err) => {
         console.log("err", err);

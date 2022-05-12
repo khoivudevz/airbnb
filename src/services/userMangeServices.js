@@ -2,7 +2,7 @@ import axios from "axios";
 import { url, token, tokenByClass } from "../constants/configUrl";
 
 export const userManageServices = {
-  createUser() {
+  createUser(data) {
     return axios({
       url: `${url}/api/users`,
       method: "POST",
@@ -10,6 +10,7 @@ export const userManageServices = {
         token,
         tokenByClass,
       },
+      data,
     });
   },
   getDetailsUser(_idUser) {

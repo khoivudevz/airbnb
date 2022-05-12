@@ -3,15 +3,23 @@ import { Avatar } from "antd";
 import { MdOutlineVerifiedUser, MdOutlineCheck, MdStar } from "react-icons/md";
 import { useParams } from "react-router-dom";
 import { userManageServices } from "../../services/userMangeServices";
+import { setUserAvatar } from "../../reducers/userSlice";
+import { useDispatch, useSelector } from "react-redux";
 export default function DetailUser() {
   let { id } = useParams();
+  const dispatch = useDispatch();
+  const userAvatar = useSelector((state) => state.userSlice.avatar);
   const [data, setData] = useState(null);
   useEffect(() => {
     userManageServices
       .getDetailsUser(id)
       .then((res) => {
         setData(res.data);
-        console.log("res", res);
+        if (res.data.avatar) {
+          dispatch(setUserAvatar(res.data.avatar));
+        } else {
+          dispatch(setUserAvatar(null));
+        }
       })
       .catch((err) => {
         console.log("err", err);
@@ -24,9 +32,10 @@ export default function DetailUser() {
         <div className="border-2 border-gray w-[300px] rounded-lg py-10">
           <div className="flex flex-col items-center justify-center">
             <Avatar
-              src="https://joeschmoe.io/api/v1/random"
-              size={200}
-              className="shadow-xl border-2 border-gray"
+              src={
+                userAvatar ? userAvatar : "https://joeschmoe.io/api/v1/random"
+              }
+              size={150}
             />
             <p className="mt-2">Cập nhật ảnh đại diện</p>
           </div>

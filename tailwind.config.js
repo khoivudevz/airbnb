@@ -14,6 +14,7 @@ module.exports = {
       orangeblood: "#b72842",
       orange: "#c3352b",
       transparent: "transparent",
+      deepblue: "#003249",
     },
   },
   plugins: [],

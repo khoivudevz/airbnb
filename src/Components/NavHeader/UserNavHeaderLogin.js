@@ -18,7 +18,9 @@ export default function UserNavHeaderLogin() {
   let userAvatar = useSelector((state) => state.userSlice.avatar);
   let handleLogOut = () => {
     localStorageServices.removeUserInfor();
+    localStorageServices.removeToken();
     dispatch(removeUserInfor());
+
     Swal.fire("Đăng xuất thành công", "Trở về trang chủ!", "success");
     navigate("/");
   };

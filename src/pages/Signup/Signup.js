@@ -16,8 +16,9 @@ export default function Signup() {
       email: values.email,
       password: values.password,
       phone: values.phone,
-      gender: values.gender,
       birthday,
+      gender: values.gender,
+      adress: values.address,
     };
     userServices
       .signUp(data)

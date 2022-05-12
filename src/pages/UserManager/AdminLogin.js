@@ -1,29 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form, Input, Button } from "antd";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
 import { userServices } from "../../services/userServices";
-import { useDispatch } from "react-redux";
-import { setUserInfor } from "../../reducers/userSlice";
 import { localStorageServices } from "../../services/localStorageServices";
+import { setAdminInfor } from "../../reducers/adminSlice";
 
-export default function Login() {
+export default function AdminLogin() {
   let navigate = useNavigate();
   let dispatch = useDispatch();
   const onFinish = (values) => {
     userServices
       .logIn(values)
       .then((res) => {
-        console.log("res", res);
-        dispatch(setUserInfor(res.data.user));
-        localStorageServices.setUserInfor(res.data.user);
-        localStorageServices.setToken(res.data.token);
+        dispatch(setAdminInfor(res.data.user));
+        localStorageServices.setAdminInfor(res.data.user);
+        localStorageServices.setAdminToken(res.data.token);
         Swal.fire(
           "Đăng nhập thành công!",
-          "Di chuyển đến trang chủ!",
+          "Di chuyển đến trang quản lý!",
           "success"
         );
-        navigate("/");
+        navigate("/admin/QuanLyNguoiDung");
       })
       .catch((err) => {
         console.log("err", err);
@@ -34,24 +33,18 @@ export default function Login() {
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
+
   return (
-    <div className="container mx-auto fontFace my-32">
-      <div className="flex items-center justify-center">
-        <div className="hidden md:block w-[556px] h-[700px] ">
-          <img
-            src="https://i.pinimg.com/564x/4f/4f/6d/4f4f6d78eb37fbeb995efbadf7670fea.jpg"
-            alt="photo"
-            className="object-cover w-full h-full rounded-l-xl shadow-xl"
-          />
-        </div>
-        <div className="w-[556px] h-[700px] flex items-center justify-center shadow-xl rounded-r-xl">
+    <div className="h-screen w-screen">
+      <div className="container mx-auto flex items-center justify-center h-full w-full">
+        <div>
           <Form
             name="basic"
             labelCol={{
-              span: 24,
+              span: 8,
             }}
             wrapperCol={{
-              span: 24,
+              span: 16,
             }}
             initialValues={{
               remember: true,
@@ -74,17 +67,26 @@ export default function Login() {
             </Form.Item>
 
             <Form.Item
-              label="Mật khẩu"
+              label="Password"
               name="password"
               rules={[
                 {
                   required: true,
-                  message: "Vui lòng nhập mật khẩu!",
+                  message: "Vui lòng nhập password!",
                 },
               ]}
             >
               <Input.Password />
             </Form.Item>
+
+            <Form.Item
+              name="remember"
+              valuePropName="checked"
+              wrapperCol={{
+                offset: 8,
+                span: 16,
+              }}
+            ></Form.Item>
 
             <Form.Item
               wrapperCol={{
@@ -96,14 +98,6 @@ export default function Login() {
                 Đăng nhập
               </Button>
             </Form.Item>
-            <Link to="/signup">
-              <div>
-                <p>
-                  Chưa có tài khoản? Đi đến trang{" "}
-                  <span className="font-bold">đăng ký</span>
-                </p>
-              </div>
-            </Link>
           </Form>
         </div>
       </div>

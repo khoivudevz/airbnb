@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { userManageServices } from "../../services/userMangeServices";
-import UserTable from "./UserTable";
+import { userManageServices } from "../../../../services/userMangeServices";
+import UserTable from "../UserTable/UserTable";
 export default function UserList() {
   const [data, setData] = useState(null);
   useEffect(() => {
     userManageServices
       .getUserList()
       .then((res) => {
-        // console.log("res", res);
         setData(res.data);
       })
       .catch((err) => {

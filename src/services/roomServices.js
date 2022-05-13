@@ -1,15 +1,16 @@
 import axios from "axios";
-import { url, token, tokenByClass } from "../constants/configUrl";
+import { url, token, tokenByClass, ADMIN_TOKEN } from "../constants/configUrl";
 
 export const roomServices = {
-  createRoom() {
+  createRoom(data) {
     return axios({
       url: `${url}/api/rooms`,
       method: "POST",
       headers: {
-        token,
+        token: ADMIN_TOKEN,
         tokenByClass,
       },
+      data,
     });
   },
   getRoomList() {
@@ -39,14 +40,15 @@ export const roomServices = {
       },
     });
   },
-  updateDetailsRoom(_idRoom) {
+  updateDetailsRoom(_idRoom, data) {
     return axios({
       url: `${url}/api/rooms/${_idRoom}`,
       method: "PUT",
       headers: {
         tokenByClass,
-        token,
+        token: ADMIN_TOKEN,
       },
+      data,
     });
   },
   deleteRoom(_idRoom) {
@@ -55,7 +57,7 @@ export const roomServices = {
       method: "DELETE",
       headers: {
         tokenByClass,
-        token,
+        token: ADMIN_TOKEN,
       },
     });
   },

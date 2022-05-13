@@ -12,9 +12,9 @@ import AllLocation from "./pages/AllLocation/AllLocation";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import MobileUserSelect from "./pages/MobileUserSelect/MobileUserSelect";
 import DetailRoom from "./pages/DetailRoom/DetailRoom";
-import AdminLogin from "./pages/UserManager/AdminLogin";
-import UserManager from "./pages/UserManager/UserManager";
 import BookedRoomList from "./pages/BookedRoomList/BookedRoomList";
+import AdminLogin from "./pages/Admin/AdminLogin";
+import AdminHome from "./pages/Admin/AdminHome/AdminHome";
 function App() {
   return (
     <>
@@ -43,7 +43,7 @@ function App() {
             element={<Layout Components={MobileUserSelect} />}
           />
           <Route path="/admin" element={<AdminLogin />} />
-          <Route path="/admin/QuanLyNguoiDung" element={<UserManager />} />
+          <Route path="/admin/home" element={<AdminHome />} />
         </Routes>
       </BrowserRouter>
     </>

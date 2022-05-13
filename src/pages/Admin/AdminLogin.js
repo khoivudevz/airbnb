@@ -22,7 +22,7 @@ export default function AdminLogin() {
           "Di chuyển đến trang quản lý!",
           "success"
         );
-        navigate("/admin/QuanLyNguoiDung");
+        navigate("/admin/home");
       })
       .catch((err) => {
         console.log("err", err);

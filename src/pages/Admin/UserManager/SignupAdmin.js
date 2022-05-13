@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Modal, Button, Form, Input, DatePicker, Select } from "antd";
 import moment from "moment";
 import Swal from "sweetalert2";
-import { userManageServices } from "../../services/userMangeServices";
+import { userManageServices } from "../../../services/userMangeServices";
 
 const { Option } = Select;
 

@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Form, Input, DatePicker, Select } from "antd";
 import moment from "moment";
 import Swal from "sweetalert2";
-import { userManageServices } from "../../services/userMangeServices";
+import { userManageServices } from "../../../../../services/userMangeServices";
 
 const { Option } = Select;
 
@@ -23,7 +23,9 @@ export default function FormUpdateInfor({ data, id }) {
       .updateUser(id, data)
       .then((res) => {
         Swal.fire("Thành công!", "Đã cập nhật thông tin!", "success");
-        window.location.reload();
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
       })
       .catch((err) => {
         console.log("err", err);

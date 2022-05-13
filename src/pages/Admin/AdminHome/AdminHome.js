@@ -4,14 +4,14 @@ import { UserOutlined } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { Menu, Dropdown, Space } from "antd";
 import { FiLogOut } from "react-icons/fi";
-import { localStorageServices } from "../../services/localStorageServices";
+import { localStorageServices } from "../../../services/localStorageServices";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import { removeAdminInfor } from "../../reducers/adminSlice";
-import SignupAdmin from "./SignupAdmin";
-import UserList from "./UserList";
+import { removeAdminInfor } from "../../../reducers/adminSlice";
+import RoomManager from "../../Admin/RoomManager/RoomManager";
+import UserManager from "../UserManager/UserManager";
 const { TabPane } = Tabs;
-export default function UserManager() {
+export default function AdminHome() {
   let dispatch = useDispatch();
   let navigate = useNavigate();
   let adminInfor = useSelector((state) => state.adminSlice.adminInfor);
@@ -77,14 +77,13 @@ export default function UserManager() {
       <div className="h-[90%] py-20">
         <Tabs onChange={callback} type="card" tabPosition="left">
           <TabPane tab="Quản lý người dùng" key="1">
-            <SignupAdmin />
-            <UserList />
+            <UserManager />
           </TabPane>
           <TabPane tab="Quản lý thông tin vị trí" key="2">
             Content of Tab Pane 2
           </TabPane>
           <TabPane tab="Quản lý thông tin phòng" key="3">
-            Content of Tab Pane 3
+            <RoomManager />
           </TabPane>
         </Tabs>
       </div>

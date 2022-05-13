@@ -8,8 +8,6 @@ import { Rate } from "antd";
 import { Progress } from "antd";
 import { RiParkingBoxFill } from "react-icons/ri";
 import { CgScreen } from "react-icons/cg";
-import { DatePicker } from "antd";
-
 import {
   AiOutlineWifi,
   AiFillCar,
@@ -20,6 +18,7 @@ import {
 import { MdKitchen } from "react-icons/md";
 import { Avatar } from "antd";
 import { roomServices } from "../../services/roomServices";
+import BookingRoom from "./BookingRoom";
 
 export default function DetailRoom() {
   let { id } = useParams();
@@ -34,15 +33,7 @@ export default function DetailRoom() {
         console.log("err", err);
       });
   }, []);
-  const { RangePicker } = DatePicker;
-  function onChange(value, dateString) {
-    console.log("Selected Time: ", value);
-    console.log("Formatted Selected Time: ", dateString);
-  }
 
-  function onOk(value) {
-    console.log("onOk: ", value);
-  }
   return (
     <div className="my-32">
       <div className="container mx-auto fontFace">
@@ -82,32 +73,7 @@ export default function DetailRoom() {
               <Avatar size={60} src="https://joeschmoe.io/api/v1/random" />
             </div>
           </div>
-          <div className="w-[376px] rounded-xl shadow-xl border-2 border-grayBg">
-            <div className="flex items-center justify-between m-5">
-              <div className="flex items-center space-x-1">
-                <p className=" text-3xl">$</p>{" "}
-                <p className="font-bold text-2xl">{data?.price}</p>{" "}
-                <p className="text-base">/đêm</p>
-              </div>
-              <div className="flex items-center space-x-1">
-                <AiFillStar size={20} />
-                <p className="font-bold text-base">4,6</p>
-              </div>
-            </div>
-            <div className="flex items-center justify-center">
-              <RangePicker
-                showTime={{ format: "HH:mm" }}
-                format="YYYY-MM-DD HH:mm"
-                onChange={onChange}
-                onOk={onOk}
-              />
-            </div>
-            <div className="flex items-center justify-center m-5 cursor-pointer">
-              <div className="w-[350px] h-[53px] bg-hotpink rounded-xl text-white flex items-center justify-center">
-                <p className="text-lg">Đặt phòng</p>
-              </div>
-            </div>
-          </div>
+          <BookingRoom data={data} />
         </div>
         <div className="ml-[173px] w-[770px]">
           <div className="space-y-5 flex flex-col items-start justify-center text-lg border-b-2 border-b-gray py-5">

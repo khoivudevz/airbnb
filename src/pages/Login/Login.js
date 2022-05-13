@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { userServices } from "../../services/userServices";
 import { useDispatch } from "react-redux";
-import { setUserInfor } from "../../reducers/userSlice";
+import { setUserAvatar, setUserInfor } from "../../reducers/userSlice";
 import { localStorageServices } from "../../services/localStorageServices";
 
 export default function Login() {
@@ -18,6 +18,9 @@ export default function Login() {
         dispatch(setUserInfor(res.data.user));
         localStorageServices.setUserInfor(res.data.user);
         localStorageServices.setToken(res.data.token);
+        if (res.data.user.avatar) {
+          dispatch(setUserAvatar(res.data.user.avatar));
+        }
         Swal.fire(
           "Đăng nhập thành công!",
           "Di chuyển đến trang chủ!",

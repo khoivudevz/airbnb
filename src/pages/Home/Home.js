@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SearchBar from "../../Components/SearchBar/SearchBar";
 import image from "../../assets/images/933-1600x700.jpg";
+import { userManageServices } from "../../services/userMangeServices";
 export default function Home() {
   return (
     <div className="relative">

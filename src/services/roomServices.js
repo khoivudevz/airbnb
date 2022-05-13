@@ -59,7 +59,7 @@ export const roomServices = {
       },
     });
   },
-  bookingRoom() {
+  bookingRoom(data) {
     return axios({
       url: `${url}/api/rooms/booking`,
       method: "POST",
@@ -67,6 +67,7 @@ export const roomServices = {
         tokenByClass,
         token,
       },
+      data,
     });
   },
   updatePhotosRoom(_idRoom) {

@@ -1,5 +1,6 @@
 import React from "react";
-import { Upload, message, Button } from "antd";
+import { Upload, Button, message } from "antd";
+import Swal from "sweetalert2";
 import { UploadOutlined } from "@ant-design/icons";
 import { token, tokenByClass } from "../../constants/configUrl";
 const props = {
@@ -14,8 +15,14 @@ const props = {
       console.log(info.file, info.fileList);
     }
     if (info.file.status === "done") {
-      message.success("Cập nhật ảnh đại diện thành công");
-      window.location.reload();
+      Swal.fire(
+        "Cập nhật ảnh dại điện thành công!",
+        "Tiến hành tải lại trang!",
+        "success"
+      );
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
     } else if (info.file.status === "error") {
       message.error("Cập nhật ảnh đại diện thất bại");
     }

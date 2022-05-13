@@ -14,6 +14,7 @@ import MobileUserSelect from "./pages/MobileUserSelect/MobileUserSelect";
 import DetailRoom from "./pages/DetailRoom/DetailRoom";
 import AdminLogin from "./pages/UserManager/AdminLogin";
 import UserManager from "./pages/UserManager/UserManager";
+import BookedRoomList from "./pages/BookedRoomList/BookedRoomList";
 function App() {
   return (
     <>
@@ -32,6 +33,10 @@ function App() {
           <Route
             path="/room/:id"
             element={<Layout Components={DetailRoom} />}
+          />
+          <Route
+            path="/booked/:id"
+            element={<Layout Components={BookedRoomList} />}
           />
           <Route
             path="/muser"

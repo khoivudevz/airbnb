@@ -2,6 +2,7 @@ import React from "react";
 import { GrUserSettings, GrLogout } from "react-icons/gr";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { MdOutlineMeetingRoom } from "react-icons/md";
 import Swal from "sweetalert2";
 import { removeUserInfor } from "../../reducers/userSlice";
 import { localStorageServices } from "../../services/localStorageServices";
@@ -27,6 +28,12 @@ export default function MobileUserSelect() {
           <div className="flex items-center justify-center space-x-3">
             <GrUserSettings size={25} />
             <p>Thông tin cá nhân</p>
+          </div>
+        </Link>
+        <Link to={`/booked/${userInfor._id}`}>
+          <div className="flex items-center justify-center space-x-3">
+            <MdOutlineMeetingRoom size={25} />
+            <p>Danh sách phòng đã đặt</p>
           </div>
         </Link>
 

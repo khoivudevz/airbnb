@@ -1,6 +1,6 @@
 import React from "react";
 import { FaSearch, FaRegUserCircle } from "react-icons/fa";
-import { AiOutlineHeart } from "react-icons/ai";
+import { MdOutlineMeetingRoom } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Avatar } from "antd";
@@ -35,8 +35,13 @@ export default function HomeMobileNavHeader() {
               </Link>
             </div>
             <div className="flex flex-col items-center justify-center">
-              <AiOutlineHeart size={30} color="#a0a0a0" />
-              <p className="text-xs">Yêu thích</p>
+              <Link
+                className="flex flex-col items-center justify-center"
+                to={`/booked/${userInfor._id}`}
+              >
+                <MdOutlineMeetingRoom size={30} color="#a0a0a0" />
+                <p className="text-xs">Danh sách phòng đã đặt</p>
+              </Link>
             </div>
             <div className="flex flex-col items-center justify-center">
               {userInfor ? (

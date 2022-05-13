@@ -1,11 +1,12 @@
 import React from "react";
 import { BiMenu } from "react-icons/bi";
+import { MdOutlineMeetingRoom } from "react-icons/md";
+import { GrUserSettings } from "react-icons/gr";
+import { FiLogOut } from "react-icons/fi";
 import { Avatar } from "antd";
 import { Menu, Dropdown, Space } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { GrUserSettings } from "react-icons/gr";
-import { FiLogOut } from "react-icons/fi";
 import Swal from "sweetalert2";
 import { localStorageServices } from "../../services/localStorageServices";
 import { removeUserInfor } from "../../reducers/userSlice";
@@ -53,9 +54,9 @@ export default function UserNavHeaderLogin() {
         },
         {
           label: (
-            <Link to={`/user/${userInfor._id}`}>
+            <Link to={`/booked/${userInfor._id}`}>
               <div className="fontFace flex items-center justify-center space-x-2">
-                <GrUserSettings /> <p>Danh sách phòng đã đặt</p>
+                <MdOutlineMeetingRoom /> <p>Danh sách phòng đã đặt</p>
               </div>
             </Link>
           ),

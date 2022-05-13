@@ -7,6 +7,8 @@ import { Avatar } from "antd";
 
 export default function HomeMobileNavHeader() {
   let userInfor = useSelector((state) => state.userSlice.userInfor);
+  let userAvatar = useSelector((state) => state.userSlice.avatar);
+
   return (
     <>
       <div className=" h-20 w-full fixed top-0 z-10 ">
@@ -40,7 +42,7 @@ export default function HomeMobileNavHeader() {
               {userInfor ? (
                 <Link to="/muser">
                   <div className="flex flex-col items-center justify-center">
-                    <Avatar src="https://joeschmoe.io/api/v1/random" />
+                    <Avatar src={userAvatar} />
                     <p className="text-xs">Hồ sơ</p>
                   </div>
                 </Link>

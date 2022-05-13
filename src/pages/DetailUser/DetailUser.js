@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
 import { Avatar } from "antd";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { MdOutlineVerifiedUser, MdOutlineCheck, MdStar } from "react-icons/md";
 import { useParams } from "react-router-dom";
 import { userManageServices } from "../../services/userMangeServices";
 import { setUserAvatar } from "../../reducers/userSlice";
-import { useDispatch, useSelector } from "react-redux";
+import UploadImg from "../../Components/UploadImg/UploadImg";
 export default function DetailUser() {
   let { id } = useParams();
   const dispatch = useDispatch();
@@ -37,7 +38,9 @@ export default function DetailUser() {
               }
               size={150}
             />
-            <p className="mt-2">Cập nhật ảnh đại diện</p>
+            <div className="mt-5">
+              <UploadImg />
+            </div>
           </div>
           <MdOutlineVerifiedUser className="ml-5 my-5" size={30} />
           <div className="flex flex-col items-start justify-center ml-5">

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { url, token, tokenByClass } from "../constants/configUrl";
+import { url, token, tokenByClass, ADMIN_TOKEN } from "../constants/configUrl";
 
 export const userManageServices = {
   createUser(data) {
@@ -7,7 +7,7 @@ export const userManageServices = {
       url: `${url}/api/users`,
       method: "POST",
       headers: {
-        token,
+        token: ADMIN_TOKEN,
         tokenByClass,
       },
       data,
@@ -24,7 +24,7 @@ export const userManageServices = {
   },
   getUserList() {
     return axios({
-      url: `${url}/api/users/pagination?skip=0&limit=3`,
+      url: `${url}/api/users/pagination`,
       method: "GET",
       headers: {
         tokenByClass,
@@ -36,24 +36,25 @@ export const userManageServices = {
       url: `${url}/api/users/${_idUser}`,
       method: "DELETE",
       headers: {
-        token,
+        token: ADMIN_TOKEN,
         tokenByClass,
       },
     });
   },
-  updateUser(_idUser) {
+  updateUser(_idUser, data) {
     return axios({
       url: `${url}/api/users/${_idUser}`,
       method: "PUT",
       headers: {
-        token,
+        token: ADMIN_TOKEN,
         tokenByClass,
       },
+      data,
     });
   },
-  updateAvatarUser(_idUser) {
+  updateAvatarUser() {
     return axios({
-      url: `${url}/api/users/upload-avatar/${_idUser}`,
+      url: `${url}/api/users/upload-avatar/`,
       method: "POST",
       headers: {
         token,

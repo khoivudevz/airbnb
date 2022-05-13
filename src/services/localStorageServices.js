@@ -2,11 +2,16 @@ const USER_INFOR = "USER_INFOR";
 const ADMIN_INFOR = "ADMIN_INFOR";
 const TOKEN = "TOKEN";
 const ADMIN_TOKEN = "ADMIN_TOKEN";
+const AVATAR = "AVATAR";
 
 export const localStorageServices = {
   setUserInfor: (data) => {
     let json = JSON.stringify(data);
     localStorage.setItem(USER_INFOR, json);
+  },
+  setAVATAR: (data) => {
+    let json = JSON.stringify(data);
+    localStorage.setItem(AVATAR, json);
   },
   setAdminInfor: (data) => {
     let json = JSON.stringify(data);
@@ -24,6 +29,15 @@ export const localStorageServices = {
   getUserInfor: () => {
     if (localStorage.getItem(USER_INFOR)) {
       let json = localStorage.getItem(USER_INFOR);
+
+      return JSON.parse(json);
+    } else {
+      return null;
+    }
+  },
+  getAVATAR: () => {
+    if (localStorage.getItem(AVATAR)) {
+      let json = localStorage.getItem(AVATAR);
 
       return JSON.parse(json);
     } else {
@@ -60,6 +74,9 @@ export const localStorageServices = {
 
   removeUserInfor: () => {
     localStorage.removeItem(USER_INFOR);
+  },
+  removeAVATAR: () => {
+    localStorage.removeItem(AVATAR);
   },
   removeToken: () => {
     localStorage.removeItem(TOKEN);

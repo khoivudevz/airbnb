@@ -19,6 +19,7 @@ export default function UserNavHeaderLogin() {
   let handleLogOut = () => {
     localStorageServices.removeUserInfor();
     localStorageServices.removeToken();
+    localStorageServices.removeAVATAR();
     dispatch(removeUserInfor());
 
     Swal.fire("Đăng xuất thành công", "Trở về trang chủ!", "success");
@@ -43,12 +44,22 @@ export default function UserNavHeaderLogin() {
         {
           label: (
             <Link to={`/user/${userInfor._id}`}>
-              <div className="fontFace flex items-center justify-center space-x-2">
+              <div className="fontFace flex items-center justify-start space-x-2">
                 <GrUserSettings /> <p>Cài đặt tài khoản</p>
               </div>
             </Link>
           ),
           key: "1",
+        },
+        {
+          label: (
+            <Link to={`/user/${userInfor._id}`}>
+              <div className="fontFace flex items-center justify-center space-x-2">
+                <GrUserSettings /> <p>Danh sách phòng đã đặt</p>
+              </div>
+            </Link>
+          ),
+          key: "2",
         },
         {
           type: "divider",

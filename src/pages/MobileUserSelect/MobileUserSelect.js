@@ -15,6 +15,7 @@ export default function MobileUserSelect() {
   let handleLogOut = () => {
     localStorageServices.removeUserInfor();
     localStorageServices.removeToken();
+    localStorageServices.removeAVATAR();
     dispatch(removeUserInfor());
     Swal.fire("Đăng xuất thành công", "Trở về trang chủ!", "success");
     navigate("/");

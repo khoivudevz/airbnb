@@ -3,7 +3,7 @@ import { localStorageServices } from "../services/localStorageServices";
 
 const initialState = {
   userInfor: localStorageServices.getUserInfor(),
-  avatar: null,
+  avatar: localStorageServices.getAVATAR(),
 };
 
 const userSlice = createSlice({
@@ -13,19 +13,11 @@ const userSlice = createSlice({
     setUserInfor: (state, action) => {
       state.userInfor = action.payload;
     },
-    setUserAvatar: (state, action) => {
-      state.avatar = action.payload;
-    },
     removeUserInfor: (state) => {
       state.userInfor = null;
     },
   },
 });
-export const {
-  setUserInfor,
-  setUserAvatar,
-  removeUserInfor,
-  setToken,
-  removeToken,
-} = userSlice.actions;
+export const { setUserInfor, removeUserInfor, setToken, removeToken } =
+  userSlice.actions;
 export default userSlice.reducer;

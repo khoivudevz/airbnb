@@ -4,11 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { MdOutlineVerifiedUser, MdOutlineCheck, MdStar } from "react-icons/md";
 import { useParams } from "react-router-dom";
 import { userManageServices } from "../../services/userMangeServices";
-import { setUserAvatar } from "../../reducers/userSlice";
 import UploadImg from "../../Components/UploadImg/UploadImg";
 export default function DetailUser() {
   let { id } = useParams();
-  const dispatch = useDispatch();
   const userAvatar = useSelector((state) => state.userSlice.avatar);
   const [data, setData] = useState(null);
   useEffect(() => {
@@ -16,11 +14,6 @@ export default function DetailUser() {
       .getDetailsUser(id)
       .then((res) => {
         setData(res.data);
-        if (res.data.avatar) {
-          dispatch(setUserAvatar(res.data.avatar));
-        } else {
-          dispatch(setUserAvatar(null));
-        }
       })
       .catch((err) => {
         console.log("err", err);
@@ -39,7 +32,7 @@ export default function DetailUser() {
               size={150}
             />
             <div className="mt-5">
-              <UploadImg />
+              <UploadImg id={id} />
             </div>
           </div>
           <MdOutlineVerifiedUser className="ml-5 my-5" size={30} />

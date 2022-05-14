@@ -5,7 +5,11 @@ import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
 import { userServices } from "../../services/userServices";
 import { localStorageServices } from "../../services/localStorageServices";
-import { setAdminInfor } from "../../reducers/adminSlice";
+import {
+  setAdminAvatar,
+  setAdminInfor,
+  setAdminToken,
+} from "../../reducers/adminSlice";
 
 export default function AdminLogin() {
   let navigate = useNavigate();
@@ -16,7 +20,12 @@ export default function AdminLogin() {
       .then((res) => {
         dispatch(setAdminInfor(res.data.user));
         localStorageServices.setAdminInfor(res.data.user);
+        dispatch(setAdminToken(res.data.token));
         localStorageServices.setAdminToken(res.data.token);
+        if (res.data.user.avatar) {
+          dispatch(setAdminAvatar(res.data.user.avatar));
+          localStorageServices.setAdminAVATAR(res.data.user.avatar);
+        }
         Swal.fire(
           "Đăng nhập thành công!",
           "Di chuyển đến trang quản lý!",

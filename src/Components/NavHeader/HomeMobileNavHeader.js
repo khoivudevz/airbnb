@@ -8,7 +8,7 @@ import { localStorageServices } from "../../services/localStorageServices";
 
 export default function HomeMobileNavHeader() {
   let userInfor = useSelector((state) => state.userSlice.userInfor);
-  let userAvatar = localStorageServices.getAVATAR();
+  let userAvatar = useSelector((state) => state.userSlice.avatar);
 
   return (
     <>

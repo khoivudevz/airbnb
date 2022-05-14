@@ -1,5 +1,6 @@
 import axios from "axios";
-import { url, token, tokenByClass, ADMIN_TOKEN } from "../constants/configUrl";
+import { url, tokenByClass } from "../constants/configUrl";
+import { localStorageServices } from "./localStorageServices";
 
 export const userManageServices = {
   createUser(data) {
@@ -7,7 +8,7 @@ export const userManageServices = {
       url: `${url}/api/users`,
       method: "POST",
       headers: {
-        token: ADMIN_TOKEN,
+        token: localStorageServices.getAdminToken(),
         tokenByClass,
       },
       data,
@@ -36,7 +37,7 @@ export const userManageServices = {
       url: `${url}/api/users/${_idUser}`,
       method: "DELETE",
       headers: {
-        token: ADMIN_TOKEN,
+        token: localStorageServices.getAdminToken(),
         tokenByClass,
       },
     });
@@ -46,20 +47,10 @@ export const userManageServices = {
       url: `${url}/api/users/${_idUser}`,
       method: "PUT",
       headers: {
-        token: ADMIN_TOKEN,
+        token: localStorageServices.getAdminToken(),
         tokenByClass,
       },
       data,
-    });
-  },
-  updateAvatarUser() {
-    return axios({
-      url: `${url}/api/users/upload-avatar/`,
-      method: "POST",
-      headers: {
-        token,
-        tokenByClass,
-      },
     });
   },
 };

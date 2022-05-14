@@ -1,5 +1,6 @@
 import axios from "axios";
-import { url, token, tokenByClass } from "../constants/configUrl";
+import { url, tokenByClass } from "../constants/configUrl";
+import { localStorageServices } from "./localStorageServices";
 
 export const locationServices = {
   createLocation() {
@@ -7,7 +8,7 @@ export const locationServices = {
       url: `${url}/api/locations`,
       method: "POST",
       headers: {
-        token,
+        token: localStorageServices.getToken(),
         tokenByClass,
       },
     });
@@ -17,7 +18,7 @@ export const locationServices = {
       url: `${url}/api/locations/${_idLocation}`,
       method: "DELETE",
       headers: {
-        token,
+        token: localStorageServices.getToken(),
         tokenByClass,
       },
     });
@@ -45,7 +46,7 @@ export const locationServices = {
       url: `${url}/api/locations/${_idLocaton}`,
       method: "PUT",
       headers: {
-        token,
+        token: localStorageServices.getToken(),
         tokenByClass,
       },
     });
@@ -55,7 +56,7 @@ export const locationServices = {
       url: `${url}/api/locations/upload-images/${_idLocation}`,
       method: "POST",
       headers: {
-        token,
+        token: localStorageServices.getToken(),
         tokenByClass,
       },
     });

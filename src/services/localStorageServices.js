@@ -3,6 +3,7 @@ const ADMIN_INFOR = "ADMIN_INFOR";
 const TOKEN = "TOKEN";
 const ADMIN_TOKEN = "ADMIN_TOKEN";
 const AVATAR = "AVATAR";
+const ADMIN_AVATAR = "ADMIN_AVATAR";
 
 export const localStorageServices = {
   setUserInfor: (data) => {
@@ -12,6 +13,10 @@ export const localStorageServices = {
   setAVATAR: (data) => {
     let json = JSON.stringify(data);
     localStorage.setItem(AVATAR, json);
+  },
+  setAdminAVATAR: (data) => {
+    let json = JSON.stringify(data);
+    localStorage.setItem(ADMIN_AVATAR, json);
   },
   setAdminInfor: (data) => {
     let json = JSON.stringify(data);
@@ -38,6 +43,15 @@ export const localStorageServices = {
   getAVATAR: () => {
     if (localStorage.getItem(AVATAR)) {
       let json = localStorage.getItem(AVATAR);
+
+      return JSON.parse(json);
+    } else {
+      return null;
+    }
+  },
+  getAdminAVATAR: () => {
+    if (localStorage.getItem(ADMIN_AVATAR)) {
+      let json = localStorage.getItem(ADMIN_AVATAR);
 
       return JSON.parse(json);
     } else {

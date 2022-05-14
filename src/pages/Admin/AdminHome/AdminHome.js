@@ -7,7 +7,11 @@ import { FiLogOut } from "react-icons/fi";
 import { localStorageServices } from "../../../services/localStorageServices";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import { removeAdminInfor } from "../../../reducers/adminSlice";
+import {
+  removeAdminAvatar,
+  removeAdminInfor,
+  removeAdminToken,
+} from "../../../reducers/adminSlice";
 import RoomManager from "../../Admin/RoomManager/RoomManager";
 import UserManager from "../UserManager/UserManager";
 const { TabPane } = Tabs;
@@ -15,6 +19,7 @@ export default function AdminHome() {
   let dispatch = useDispatch();
   let navigate = useNavigate();
   let adminInfor = useSelector((state) => state.adminSlice.adminInfor);
+  let adminAvatar = useSelector((state) => state.adminSlice.adminAvatar);
   const [usersData, setUsersData] = useState(null);
   const [roomsData, setRoomsData] = useState(null);
 
@@ -38,7 +43,11 @@ export default function AdminHome() {
 
   let handleLogOut = () => {
     localStorageServices.removeAdminInfor();
+    localStorageServices.removeAVATAR();
+    localStorageServices.removeAminToken();
     dispatch(removeAdminInfor());
+    dispatch(removeAdminAvatar());
+    dispatch(removeAdminToken());
     Swal.fire("Đăng xuất thành công", "Trở về trang đăng nhập!", "success");
     navigate("/admin");
   };
@@ -67,7 +76,11 @@ export default function AdminHome() {
             <a onClick={(e) => e.preventDefault()}>
               <Space>
                 <p className="fontFace text-white">{adminInfor?.email}</p>{" "}
-                <Avatar size={38} icon={<UserOutlined />} />
+                {adminAvatar ? (
+                  <Avatar size={38} src={adminAvatar} />
+                ) : (
+                  <Avatar size={38} icon={<UserOutlined />} />
+                )}
               </Space>
             </a>
           </Dropdown>

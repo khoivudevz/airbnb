@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaAirbnb } from "react-icons/fa";
 import { BiWorld } from "react-icons/bi";
 import UserNavHeader from "./UserNavHeader";
@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import UserNavHeaderLogin from "./UserNavHeaderLogin";
 export default function HomeNavHeader() {
   let userInfor = useSelector((state) => state.userSlice.userInfor);
+
   return (
     <div className="h-20 bg-black">
       <div className="container mx-auto w-full h-full">

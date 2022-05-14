@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { userServices } from "../../services/userServices";
 import { useDispatch } from "react-redux";
-import { setUserInfor } from "../../reducers/userSlice";
+import { setAvatar, setToken, setUserInfor } from "../../reducers/userSlice";
 import { localStorageServices } from "../../services/localStorageServices";
 
 export default function Login() {
@@ -16,8 +16,10 @@ export default function Login() {
       .then((res) => {
         dispatch(setUserInfor(res.data.user));
         localStorageServices.setUserInfor(res.data.user);
+        dispatch(setToken(res.data.token));
         localStorageServices.setToken(res.data.token);
         if (res.data.user.avatar) {
+          dispatch(setAvatar(res.data.user.avatar));
           localStorageServices.setAVATAR(res.data.user.avatar);
         }
         Swal.fire(

@@ -3,7 +3,8 @@ import { localStorageServices } from "../services/localStorageServices";
 
 const initialState = {
   adminInfor: localStorageServices.getAdminInfor(),
-  adminAvatar: null,
+  adminToken: localStorageServices.getAdminToken(),
+  adminAvatar: localStorageServices.getAdminAVATAR(),
 };
 
 const adminSlice = createSlice({
@@ -16,8 +17,17 @@ const adminSlice = createSlice({
     setAdminAvatar: (state, action) => {
       state.adminAvatar = action.payload;
     },
+    setAdminToken: (state, action) => {
+      state.adminToken = action.payload;
+    },
     removeAdminInfor: (state) => {
       state.adminInfor = null;
+    },
+    removeAdminToken: (state) => {
+      state.adminToken = null;
+    },
+    removeAdminAvatar: (state) => {
+      state.adminAvatar = null;
     },
   },
 });
@@ -27,5 +37,6 @@ export const {
   removeAdminInfor,
   setAdminToken,
   removeAdminToken,
+  removeAdminAvatar,
 } = adminSlice.actions;
 export default adminSlice.reducer;

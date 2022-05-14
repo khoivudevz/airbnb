@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { MdOutlineMeetingRoom } from "react-icons/md";
 import Swal from "sweetalert2";
-import { removeUserInfor } from "../../reducers/userSlice";
+import { removeToken, removeUserInfor } from "../../reducers/userSlice";
 import { localStorageServices } from "../../services/localStorageServices";
 
 export default function MobileUserSelect() {
@@ -15,8 +15,8 @@ export default function MobileUserSelect() {
   const dispatch = useDispatch();
   let handleLogOut = () => {
     localStorageServices.removeUserInfor();
-    localStorageServices.removeToken();
     localStorageServices.removeAVATAR();
+    dispatch(removeToken());
     dispatch(removeUserInfor());
     Swal.fire("Đăng xuất thành công", "Trở về trang chủ!", "success");
     navigate("/");

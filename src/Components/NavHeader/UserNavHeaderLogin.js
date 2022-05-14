@@ -9,20 +9,26 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
 import { localStorageServices } from "../../services/localStorageServices";
-import { removeUserInfor } from "../../reducers/userSlice";
+import {
+  removeAvatar,
+  removeToken,
+  removeUserInfor,
+} from "../../reducers/userSlice";
 
 export default function UserNavHeaderLogin() {
   let dispatch = useDispatch();
   let navigate = useNavigate();
 
   let userInfor = useSelector((state) => state.userSlice.userInfor);
-  let userAvatar = localStorageServices.getAVATAR();
-  let handleLogOut = () => {
-    localStorageServices.removeUserInfor();
-    localStorageServices.removeToken();
-    localStorageServices.removeAVATAR();
-    dispatch(removeUserInfor());
+  let userAvatar = useSelector((state) => state.userSlice.avatar);
 
+  let handleLogOut = () => {
+    dispatch(removeUserInfor());
+    dispatch(removeToken());
+    dispatch(removeAvatar());
+    localStorageServices.removeUserInfor();
+    localStorageServices.removeAVATAR();
+    localStorageServices.removeToken();
     Swal.fire("Đăng xuất thành công", "Trở về trang chủ!", "success");
     navigate("/");
   };

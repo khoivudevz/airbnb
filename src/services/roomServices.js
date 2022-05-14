@@ -1,5 +1,6 @@
 import axios from "axios";
-import { url, token, tokenByClass, ADMIN_TOKEN } from "../constants/configUrl";
+import { url, tokenByClass } from "../constants/configUrl";
+import { localStorageServices } from "./localStorageServices";
 
 export const roomServices = {
   createRoom(data) {
@@ -7,7 +8,7 @@ export const roomServices = {
       url: `${url}/api/rooms`,
       method: "POST",
       headers: {
-        token: ADMIN_TOKEN,
+        token: localStorageServices.getAdminToken(),
         tokenByClass,
       },
       data,
@@ -46,7 +47,7 @@ export const roomServices = {
       method: "PUT",
       headers: {
         tokenByClass,
-        token: ADMIN_TOKEN,
+        token: localStorageServices.getAdminToken(),
       },
       data,
     });
@@ -57,7 +58,7 @@ export const roomServices = {
       method: "DELETE",
       headers: {
         tokenByClass,
-        token: ADMIN_TOKEN,
+        token: localStorageServices.getAdminToken(),
       },
     });
   },
@@ -67,7 +68,7 @@ export const roomServices = {
       method: "POST",
       headers: {
         tokenByClass,
-        token,
+        token: localStorageServices.getAdminToken(),
       },
       data,
     });
@@ -78,7 +79,7 @@ export const roomServices = {
       method: "POST",
       headers: {
         tokenByClass,
-        token,
+        token: localStorageServices.getAdminToken(),
       },
     });
   },

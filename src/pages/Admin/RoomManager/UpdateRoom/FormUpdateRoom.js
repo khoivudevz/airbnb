@@ -3,9 +3,11 @@ import { Button, Form, Input, Select, Upload, message } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import Swal from "sweetalert2";
 import { roomServices } from "../../../../services/roomServices";
-import { ADMIN_TOKEN, tokenByClass } from "../../../../constants/configUrl";
+import { tokenByClass } from "../../../../constants/configUrl";
+import { useSelector } from "react-redux";
 
 export default function FormUpdateRoom({ data, id }) {
+  let ADMIN_TOKEN = useSelector((state) => state.adminSlice.adminToken);
   const { Option } = Select;
   const onFinish = (values) => {
     roomServices

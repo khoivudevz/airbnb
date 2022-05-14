@@ -5,10 +5,9 @@ import { MdOutlineVerifiedUser, MdOutlineCheck, MdStar } from "react-icons/md";
 import { useParams } from "react-router-dom";
 import { userManageServices } from "../../services/userMangeServices";
 import UploadImg from "../../Components/UploadImg/UploadImg";
-import { localStorageServices } from "../../services/localStorageServices";
 export default function DetailUser() {
   let { id } = useParams();
-  const userAvatar = localStorageServices.getAVATAR();
+  const userAvatar = useSelector((state) => state.userSlice.avatar);
   const [data, setData] = useState(null);
   useEffect(() => {
     userManageServices

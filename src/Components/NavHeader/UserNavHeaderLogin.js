@@ -16,7 +16,7 @@ export default function UserNavHeaderLogin() {
   let navigate = useNavigate();
 
   let userInfor = useSelector((state) => state.userSlice.userInfor);
-  let userAvatar = useSelector((state) => state.userSlice.avatar);
+  let userAvatar = localStorageServices.getAVATAR();
   let handleLogOut = () => {
     localStorageServices.removeUserInfor();
     localStorageServices.removeToken();

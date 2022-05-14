@@ -14,7 +14,6 @@ export default function Login() {
     userServices
       .logIn(values)
       .then((res) => {
-        console.log("res", res);
         dispatch(setUserInfor(res.data.user));
         localStorageServices.setUserInfor(res.data.user);
         localStorageServices.setToken(res.data.token);

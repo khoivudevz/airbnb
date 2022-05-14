@@ -16,7 +16,7 @@ export default ({ id }) => {
     },
     onChange(info) {
       if (info.file.status !== "uploading") {
-        console.log(info.file, info.fileList);
+        // console.log(info.file, info.fileList);
       }
       if (info.file.status === "done") {
         Swal.fire(
@@ -32,9 +32,9 @@ export default ({ id }) => {
           .catch((err) => {
             console.log("err", err);
           });
-        setTimeout(() => {
-          window.location.reload();
-        }, 1000);
+        // setTimeout(() => {
+        //   window.location.reload();
+        // }, 1000);
       } else if (info.file.status === "error") {
         message.error("Cập nhật ảnh đại diện thất bại");
       }

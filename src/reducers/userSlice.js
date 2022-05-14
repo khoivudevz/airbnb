@@ -3,7 +3,6 @@ import { localStorageServices } from "../services/localStorageServices";
 
 const initialState = {
   userInfor: localStorageServices.getUserInfor(),
-  avatar: localStorageServices.getAVATAR(),
 };
 
 const userSlice = createSlice({

@@ -4,10 +4,11 @@ import { MdOutlineMeetingRoom } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Avatar } from "antd";
+import { localStorageServices } from "../../services/localStorageServices";
 
 export default function HomeMobileNavHeader() {
   let userInfor = useSelector((state) => state.userSlice.userInfor);
-  let userAvatar = useSelector((state) => state.userSlice.avatar);
+  let userAvatar = localStorageServices.getAVATAR();
 
   return (
     <>

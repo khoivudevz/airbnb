@@ -44,70 +44,72 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="h-screen w-screen">
+    <div className="h-screen w-screen  bg-deepblue">
       <div className="container mx-auto flex items-center justify-center h-full w-full">
-        <div>
-          <Form
-            name="basic"
-            labelCol={{
-              span: 8,
-            }}
-            wrapperCol={{
-              span: 16,
-            }}
-            initialValues={{
-              remember: true,
-            }}
-            onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
-            autoComplete="off"
-          >
-            <Form.Item
-              label="Email"
-              name="email"
-              rules={[
-                {
-                  required: true,
-                  message: "Vui lòng nhập email!",
-                },
-              ]}
-            >
-              <Input />
-            </Form.Item>
-
-            <Form.Item
-              label="Password"
-              name="password"
-              rules={[
-                {
-                  required: true,
-                  message: "Vui lòng nhập password!",
-                },
-              ]}
-            >
-              <Input.Password />
-            </Form.Item>
-
-            <Form.Item
-              name="remember"
-              valuePropName="checked"
+        <div className="container mx-auto flex items-center justify-center rounded-xl py-24 w-1/2 bg-white shadow-xl">
+          <div>
+            <Form
+              name="basic"
+              labelCol={{
+                span: 8,
+              }}
               wrapperCol={{
-                offset: 8,
                 span: 16,
               }}
-            ></Form.Item>
-
-            <Form.Item
-              wrapperCol={{
-                offset: 8,
-                span: 16,
+              initialValues={{
+                remember: true,
               }}
+              onFinish={onFinish}
+              onFinishFailed={onFinishFailed}
+              autoComplete="off"
             >
-              <Button type="primary" htmlType="submit">
-                Đăng nhập
-              </Button>
-            </Form.Item>
-          </Form>
+              <Form.Item
+                label="Email"
+                name="email"
+                rules={[
+                  {
+                    required: true,
+                    message: "Vui lòng nhập email!",
+                  },
+                ]}
+              >
+                <Input />
+              </Form.Item>
+
+              <Form.Item
+                label="Password"
+                name="password"
+                rules={[
+                  {
+                    required: true,
+                    message: "Vui lòng nhập password!",
+                  },
+                ]}
+              >
+                <Input.Password />
+              </Form.Item>
+
+              <Form.Item
+                name="remember"
+                valuePropName="checked"
+                wrapperCol={{
+                  offset: 8,
+                  span: 16,
+                }}
+              ></Form.Item>
+
+              <Form.Item
+                wrapperCol={{
+                  offset: 8,
+                  span: 16,
+                }}
+              >
+                <Button type="primary" htmlType="submit">
+                  Đăng nhập
+                </Button>
+              </Form.Item>
+            </Form>
+          </div>
         </div>
       </div>
     </div>

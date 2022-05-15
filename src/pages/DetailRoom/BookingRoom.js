@@ -4,7 +4,7 @@ import { DatePicker } from "antd";
 import { AiFillStar } from "react-icons/ai";
 import { roomServices } from "../../services/roomServices";
 
-export default function BookingRoom({ data }) {
+export default function BookingRoom({ data, id }) {
   const [time, setTime] = useState(null);
   const { RangePicker } = DatePicker;
 
@@ -13,8 +13,13 @@ export default function BookingRoom({ data }) {
   }
 
   const handleBooking = () => {
+    let data = {
+      roomId: id,
+      checkIn: time[0],
+      checkOut: time[1],
+    };
     roomServices
-      .bookingRoom(time)
+      .bookingRoom(data)
       .then((res) => {
         Swal.fire("Chúc mừng!", "Bạn đã đặt phòng thành công!", "success");
       })

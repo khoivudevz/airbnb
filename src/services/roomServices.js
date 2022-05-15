@@ -68,7 +68,7 @@ export const roomServices = {
       method: "POST",
       headers: {
         tokenByClass,
-        token: localStorageServices.getAdminToken(),
+        token: localStorageServices.getToken(),
       },
       data,
     });

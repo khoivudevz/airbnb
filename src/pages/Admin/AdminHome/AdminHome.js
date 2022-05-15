@@ -20,14 +20,14 @@ export default function AdminHome() {
   let navigate = useNavigate();
   let adminInfor = useSelector((state) => state.adminSlice.adminInfor);
   let adminAvatar = useSelector((state) => state.adminSlice.adminAvatar);
-  const [usersData, setUsersData] = useState(null);
-  const [roomsData, setRoomsData] = useState(null);
 
   useEffect(() => {
     if (adminInfor.type !== "ADMIN") {
       dispatch(removeAdminInfor());
       localStorageServices.removeAdminInfor();
+      dispatch(removeAdminToken());
       localStorageServices.removeAminToken();
+      dispatch(removeAdminAvatar());
       Swal.fire(
         "Tài khoản không đủ thẩm quyền",
         "Trở về trang đăng nhập!",

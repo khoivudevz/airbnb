@@ -1,5 +1,6 @@
 import axios from "axios";
-import { url, token, tokenByClass } from "../constants/configUrl";
+import { url, tokenByClass } from "../constants/configUrl";
+import { localStorageServices } from "./localStorageServices";
 
 export const ticketManagerServices = {
   getTicketList() {
@@ -25,7 +26,7 @@ export const ticketManagerServices = {
       url: `${url}/api/tickets/${_idTicket}`,
       method: "PUT",
       headers: {
-        token,
+        token: localStorageServices.removeToken(),
         tokenByClass,
       },
     });
@@ -35,7 +36,7 @@ export const ticketManagerServices = {
       url: `${url}/api/tickets/${_idTicket}`,
       method: "DELETE",
       headers: {
-        token,
+        token: localStorageServices.removeToken(),
         tokenByClass,
       },
     });
@@ -45,7 +46,7 @@ export const ticketManagerServices = {
       url: `${url}/api/tickets`,
       method: "POST",
       headers: {
-        token,
+        token: localStorageServices.removeToken(),
         tokenByClass,
       },
     });

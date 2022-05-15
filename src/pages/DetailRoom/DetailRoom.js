@@ -73,7 +73,7 @@ export default function DetailRoom() {
               <Avatar size={60} src="https://joeschmoe.io/api/v1/random" />
             </div>
           </div>
-          <BookingRoom data={data} />
+          <BookingRoom data={data} id={id} />
         </div>
         <div className="ml-[173px] w-[770px]">
           <div className="space-y-5 flex flex-col items-start justify-center text-lg border-b-2 border-b-gray py-5">

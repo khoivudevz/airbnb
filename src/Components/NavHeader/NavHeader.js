@@ -7,6 +7,7 @@ import UserNavHeaderLogin from "./UserNavHeaderLogin";
 import { useSelector } from "react-redux";
 export default function NavHeader() {
   let userInfor = useSelector((state) => state.userSlice.userInfor);
+
   return (
     <div className="h-20 bg-white fixed top-0 w-full shadow-xl z-10">
       <div className="container mx-auto w-full h-full">

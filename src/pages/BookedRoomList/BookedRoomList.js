@@ -10,7 +10,7 @@ export default function BookedRoomList() {
   let [ticketList, setTicketList] = useState(null);
   let [currentPage, setCurrentPage] = useState(1);
   let [postsPerPage, setPostsPerPage] = useState(8);
-  let totalPages = Math.ceil(ticketList.length);
+  let totalPages = Math.ceil(ticketList?.length);
   let indexOfLastPost = currentPage * postsPerPage;
   let indexOfFirstPost = indexOfLastPost - postsPerPage;
   let currentPosts = ticketList?.slice(indexOfFirstPost, indexOfLastPost);

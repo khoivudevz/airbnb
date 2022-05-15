@@ -26,7 +26,7 @@ export const ticketManagerServices = {
       url: `${url}/api/tickets/${_idTicket}`,
       method: "PUT",
       headers: {
-        token: localStorageServices.removeToken(),
+        token: localStorageServices.getToken(),
         tokenByClass,
       },
     });
@@ -36,7 +36,7 @@ export const ticketManagerServices = {
       url: `${url}/api/tickets/${_idTicket}`,
       method: "DELETE",
       headers: {
-        token: localStorageServices.removeToken(),
+        token: localStorageServices.getToken(),
         tokenByClass,
       },
     });
@@ -46,7 +46,7 @@ export const ticketManagerServices = {
       url: `${url}/api/tickets`,
       method: "POST",
       headers: {
-        token: localStorageServices.removeToken(),
+        token: localStorageServices.getToken(),
         tokenByClass,
       },
     });

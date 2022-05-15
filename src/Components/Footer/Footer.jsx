@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <div className="bg-grayBg py-20 mt-20 absolute relative">
       <div className="container mx-auto fontFace">
-        <div className="flex flex-col items-start justify-center md:grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="ml-8 flex flex-col items-start justify-center md:grid md:ml-0 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="space-y-1">
             <p className="font-bold">Hỗ trợ</p>
             <p>Trung tâm trợ giúp</p>

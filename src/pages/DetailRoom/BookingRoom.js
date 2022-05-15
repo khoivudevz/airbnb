@@ -32,7 +32,7 @@ export default function BookingRoom({ data, id }) {
       });
   };
   return (
-    <div className="w-[376px] rounded-xl shadow-xl border-2 border-grayBg">
+    <div className="w-[300px] md:w-[600px] lg:w-[376px] rounded-xl shadow-xl border-2 border-grayBg">
       <div className="flex items-center justify-between m-5">
         <div className="flex items-center space-x-1">
           <p className=" text-3xl">$</p>{" "}

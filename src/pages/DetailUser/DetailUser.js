@@ -23,7 +23,7 @@ export default function DetailUser() {
 
   return (
     <div className="container mx-auto my-32 fontFace">
-      <div className="flex space-x-20">
+      <div className="block ml-8 md:flex md:space-x-20 md:ml-2 lg:ml-32 xl:ml-0">
         <div className="border-2 border-gray w-[300px] rounded-lg py-10">
           <div className="flex flex-col items-center justify-center">
             <Avatar

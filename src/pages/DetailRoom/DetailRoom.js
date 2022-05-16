@@ -37,7 +37,7 @@ export default function DetailRoom() {
   }, []);
 
   return (
-    <div className="my-32 ">
+    <div className="my-32">
       <div className="container mx-auto fontFace">
         <div className="mb-10">
           <div className="mx-[50px] xl:mx-[100px] text-2xl font-bold flex items-center space-x-3">

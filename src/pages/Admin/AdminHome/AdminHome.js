@@ -43,7 +43,7 @@ export default function AdminHome() {
 
   let handleLogOut = () => {
     localStorageServices.removeAdminInfor();
-    localStorageServices.removeAVATAR();
+    localStorageServices.removeAdminAVATAR();
     localStorageServices.removeAminToken();
     dispatch(removeAdminInfor());
     dispatch(removeAdminAvatar());

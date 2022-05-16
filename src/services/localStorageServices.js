@@ -92,6 +92,9 @@ export const localStorageServices = {
   removeAVATAR: () => {
     localStorage.removeItem(AVATAR);
   },
+  removeAdminAVATAR: () => {
+    localStorage.removeItem(ADMIN_AVATAR);
+  },
   removeToken: () => {
     localStorage.removeItem(TOKEN);
   },

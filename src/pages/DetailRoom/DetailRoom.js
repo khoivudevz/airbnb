@@ -24,6 +24,8 @@ export default function DetailRoom() {
   let { id } = useParams();
   const [data, setData] = useState(null);
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     roomServices
       .getDetailsRoom(id)
       .then((res) => {

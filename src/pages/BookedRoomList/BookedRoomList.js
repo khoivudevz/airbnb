@@ -18,6 +18,7 @@ export default function BookedRoomList() {
     setCurrentPage(page);
   };
   useEffect(() => {
+    window.scrollTo(0, 0);
     ticketManagerServices
       .getTicketListOfUser(id)
       .then((res) => {
@@ -30,7 +31,7 @@ export default function BookedRoomList() {
 
   return ticketList?.length !== 0 ? (
     <div className="pt-28 container mx-auto">
-      <div className="grid grid-cols-4 gap-y-10">
+      <div className="grid grid-cols-1 gap-y-10 ml-5 md:grid-cols-2 md:ml-12 lg:ml-24 lg:gap-10 xl:grid-cols-4">
         {currentPosts?.map((item, index) => {
           return <BookedRoomItem data={item} />;
         })}

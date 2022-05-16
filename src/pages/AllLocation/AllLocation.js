@@ -22,6 +22,7 @@ export default function AllLocation() {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     roomServices
       .getRoomList()
       .then((res) => {

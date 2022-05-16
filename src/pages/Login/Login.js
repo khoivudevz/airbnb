@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Form, Input, Button } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -8,6 +8,9 @@ import { setAvatar, setToken, setUserInfor } from "../../reducers/userSlice";
 import { localStorageServices } from "../../services/localStorageServices";
 
 export default function Login() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   let navigate = useNavigate();
   let dispatch = useDispatch();
   const onFinish = (values) => {

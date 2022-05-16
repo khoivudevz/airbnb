@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { GrUserSettings, GrLogout } from "react-icons/gr";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -9,7 +9,9 @@ import { localStorageServices } from "../../services/localStorageServices";
 
 export default function MobileUserSelect() {
   let userInfor = useSelector((state) => state.userSlice.userInfor);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   let navigate = useNavigate();
 
   const dispatch = useDispatch();

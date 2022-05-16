@@ -3,19 +3,11 @@ import { Card } from "antd";
 import moment from "moment";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import { ticketManagerServices } from "../../services/ticketManagerServices";
 export default function BookedRoomItem({ data }) {
   const { Meta } = Card;
 
   let removeTicket = () => {
-    ticketManagerServices
-      .deleteTicket(data?._id)
-      .then((res) => {
-        Swal.fire("Thành công!", "Đã hủy đặt phòng!", "success");
-      })
-      .catch((err) => {
-        console.log("err", err);
-      });
+    Swal.fire("Thông báo!", "Đã gửi yêu cầu hủy đặt phòng", "info");
   };
   return (
     <div className="relative">

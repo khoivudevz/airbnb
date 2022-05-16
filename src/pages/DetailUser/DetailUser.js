@@ -10,6 +10,7 @@ export default function DetailUser() {
   const userAvatar = useSelector((state) => state.userSlice.avatar);
   const [data, setData] = useState(null);
   useEffect(() => {
+    window.scrollTo(0, 0);
     userManageServices
       .getDetailsUser(id)
       .then((res) => {

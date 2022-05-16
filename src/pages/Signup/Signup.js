@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import moment from "moment";
 import { Form, Input, Button, DatePicker, Select } from "antd";
 import { userServices } from "../../services/userServices";
@@ -7,6 +7,9 @@ import Swal from "sweetalert2";
 
 const { Option } = Select;
 export default function Signup() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   let navigate = useNavigate();
   const onFinish = (values) => {
     let birthday = moment(values.birthday).format("YYYY-MM-DD");

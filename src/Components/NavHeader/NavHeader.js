@@ -5,9 +5,9 @@ import UserNavHeader from "./UserNavHeader";
 import { Link } from "react-router-dom";
 import UserNavHeaderLogin from "./UserNavHeaderLogin";
 import { useSelector } from "react-redux";
+import MiniSearchBar from "../MiniSearchBar/MiniSearchBar";
 export default function NavHeader() {
   let userInfor = useSelector((state) => state.userSlice.userInfor);
-
   return (
     <div className="h-20 bg-white fixed top-0 w-full shadow-xl z-10">
       <div className="container mx-auto w-full h-full">
@@ -18,9 +18,7 @@ export default function NavHeader() {
               <p className="text-hotpink fontFace text-xl font-bold">airbnb</p>
             </div>
           </Link>
-          <div>
-            <p className="text-hotpink font-bold">SEARCH</p>
-          </div>
+          <MiniSearchBar />
           <div className="flex items-center justify-center text-black fontFace space-x-4">
             <div className="flex items-center justify-center text-black fontFace space-x-4">
               <p>Trở thành chủ nhà</p>

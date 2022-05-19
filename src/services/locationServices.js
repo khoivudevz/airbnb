@@ -41,7 +41,7 @@ export const locationServices = {
       },
     });
   },
-  updateInformationLocation(_idLocaton) {
+  updateInformationLocation(_idLocaton, data) {
     return axios({
       url: `${url}/api/locations/${_idLocaton}`,
       method: "PUT",
@@ -49,6 +49,7 @@ export const locationServices = {
         token: localStorageServices.getToken(),
         tokenByClass,
       },
+      data,
     });
   },
   updatePhotoLocation(_idLocation) {

@@ -14,6 +14,7 @@ import {
 } from "../../../reducers/adminSlice";
 import RoomManager from "../../Admin/RoomManager/RoomManager";
 import UserManager from "../UserManager/UserManager";
+import LocationManager from "../../Admin/LocationManager/LocationManager";
 const { TabPane } = Tabs;
 export default function AdminHome() {
   let dispatch = useDispatch();
@@ -93,7 +94,7 @@ export default function AdminHome() {
             <UserManager />
           </TabPane>
           <TabPane tab="Quản lý thông tin vị trí" key="2">
-            Content of Tab Pane 2
+            <LocationManager />
           </TabPane>
           <TabPane tab="Quản lý thông tin phòng" key="3">
             <RoomManager />

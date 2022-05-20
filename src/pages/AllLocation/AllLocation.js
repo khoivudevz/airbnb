@@ -8,8 +8,13 @@ import { HiOutlineDesktopComputer } from "react-icons/hi";
 import { AiOutlineWifi } from "react-icons/ai";
 import { MdAttachMoney } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { removeLoading, setLoading } from "../../reducers/loadingSlice";
+import Loading from "../../Components/Loading/Loading";
 
 export default function AllLocation() {
+  let loading = useSelector((state) => state.loadingSlice.loading);
+  const dispatch = useDispatch();
   const [roomList, setRoomList] = useState(null);
   let [currentPage, setcurrentPage] = useState(1);
   let [postsPerPage, setpostsPerPage] = useState(20);
@@ -23,16 +28,21 @@ export default function AllLocation() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    dispatch(setLoading());
     roomServices
       .getRoomList()
       .then((res) => {
         setRoomList(res.data);
+        dispatch(removeLoading());
       })
       .catch((err) => {
         console.log("err", err);
+        dispatch(removeLoading());
       });
   }, []);
-  return (
+  return loading ? (
+    <Loading />
+  ) : (
     <div className="pt-20">
       <div className="flex">
         <div className="m-10 space-y-2">

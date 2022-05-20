@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import SearchBar from "../../Components/SearchBar/SearchBar";
 import image from "../../assets/images/933-1600x700.jpg";
+
 export default function Home() {
   useEffect(() => {
     window.scrollTo(0, 0);

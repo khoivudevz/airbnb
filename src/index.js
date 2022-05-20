@@ -7,11 +7,13 @@ import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import userSlice from "./reducers/userSlice";
 import adminSlice from "./reducers/adminSlice";
+import loadingSlice from "./reducers/loadingSlice";
 
 const store = configureStore({
   reducer: {
     userSlice,
     adminSlice,
+    loadingSlice,
   },
 });
 

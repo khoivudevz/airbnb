@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { BsTranslate, BsDot, BsKeyFill, BsSnow2 } from "react-icons/bs";
 import { GiTargetPrize, GiWashingMachine, GiParkBench } from "react-icons/gi";
@@ -19,24 +20,32 @@ import { MdKitchen } from "react-icons/md";
 import { Avatar } from "antd";
 import { roomServices } from "../../services/roomServices";
 import BookingRoom from "./BookingRoom";
+import { removeLoading, setLoading } from "../../reducers/loadingSlice";
+import Loading from "../../Components/Loading/Loading";
 
 export default function DetailRoom() {
+  const dispatch = useDispatch();
+  const loading = useSelector((state) => state.loadingSlice.loading);
   let { id } = useParams();
   const [data, setData] = useState(null);
   useEffect(() => {
     window.scrollTo(0, 0);
-
+    dispatch(setLoading());
     roomServices
       .getDetailsRoom(id)
       .then((res) => {
         setData(res.data);
+        dispatch(removeLoading());
       })
       .catch((err) => {
         console.log("err", err);
+        dispatch(removeLoading());
       });
   }, []);
 
-  return (
+  return loading ? (
+    <Loading />
+  ) : (
     <div className="my-32">
       <div className="container mx-auto fontFace">
         <div className="mb-10">

@@ -17,8 +17,8 @@ export default function BookedRoomItem({ data }) {
           <img
             alt="example"
             src={
-              data?.roomId.image
-                ? data?.roomId.image
+              data?.roomId?.image
+                ? data?.roomId?.image
                 : "https://airbnb.cybersoft.edu.vn/public/images/room/1652460799873_IMG_20190502_205923.jpg"
             }
           />
@@ -27,7 +27,7 @@ export default function BookedRoomItem({ data }) {
         <Meta
           title={data?.roomId?.name}
           description={
-            data?.roomId?.description.length > 60
+            data?.roomId?.description?.length > 60
               ? data?.roomId?.description.slice(0, 60) + "..."
               : data?.roomId?.description
           }

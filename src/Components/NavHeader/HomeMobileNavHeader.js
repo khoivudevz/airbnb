@@ -38,7 +38,7 @@ export default function HomeMobileNavHeader() {
             <div className="flex flex-col items-center justify-center">
               <Link
                 className="flex flex-col items-center justify-center"
-                to={`/booked/${userInfor._id}`}
+                to={`/booked/${userInfor?._id}`}
               >
                 <MdOutlineMeetingRoom size={30} color="#a0a0a0" />
                 <p className="text-xs">Danh sách phòng đã đặt</p>

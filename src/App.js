@@ -20,9 +20,9 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <BackTop>
-          <div className="bg-hotpink px-3 py-3 rounded-full flex items-center justify-center absolute -top-20">
-            <BsArrowUpShort color="white" size={40} />
+        <BackTop className="animate-bounce">
+          <div className="bg-hotpink hover:bg-white text-white hover:text-hotpink transition-all hover:shadow-xl px-3 py-3 rounded-full flex items-center justify-center absolute -top-20">
+            <BsArrowUpShort size={40} />
           </div>
         </BackTop>
         <Routes>

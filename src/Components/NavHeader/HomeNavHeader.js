@@ -19,14 +19,25 @@ export default function HomeNavHeader() {
             </div>
           </Link>
           <div className="hidden lg:flex items-center justify-center text-white fontFace space-x-4">
-            <p>Nơi ở</p>
-            <p>Trải nghiệm</p>
-            <p>Trải nghiệm trực tuyến</p>
+            <p className="hover:underline hover:decoration-hotpink hover:decoration-2 cursor-pointer transition-all">
+              Nơi ở
+            </p>
+            <p className="hover:underline hover:decoration-hotpink hover:decoration-2 cursor-pointer transition-all">
+              Trải nghiệm
+            </p>
+            <p className="hover:underline hover:decoration-hotpink hover:decoration-2 cursor-pointer transition-all">
+              Trải nghiệm trực tuyến
+            </p>
           </div>
           <div className="flex items-center justify-center text-white fontFace space-x-4">
             <div className="flex items-center justify-center text-white fontFace space-x-4">
-              <p>Trở thành chủ nhà</p>
-              <BiWorld size={25} />
+              <p className="hover:underline hover:decoration-hotpink hover:decoration-2 cursor-pointer transition-all">
+                Trở thành chủ nhà
+              </p>
+              <BiWorld
+                size={25}
+                className="hover:text-hotpink cursor-pointer transition-all"
+              />
             </div>
             {userInfor ? <UserNavHeaderLogin /> : <UserNavHeader />}
           </div>

@@ -14,7 +14,6 @@ export default function HomeLayout({ Components }) {
       <MobileNavReponsive>
         <HomeMobileNavHeader />
       </MobileNavReponsive>
-
       <Components />
       <Footer />
     </>

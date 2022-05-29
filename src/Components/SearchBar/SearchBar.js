@@ -69,8 +69,8 @@ export default function SearchBar() {
             </div>
             <div className="col-span-1 flex items-center justify-center cursor-pointer">
               <Link to="/rooms">
-                <div className="flex items-center justify-center bg-hotpink w-[50px] h-[50px] rounded-full">
-                  <FaSearch color="white" size={20} />
+                <div className="flex items-center justify-center bg-hotpink text-white hover:bg-white hover:shadow-xl hover:text-hotpink  transition-all w-[50px] h-[50px] rounded-full">
+                  <FaSearch size={20} />
                 </div>
               </Link>
             </div>

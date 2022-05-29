@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaSearch, FaRegUserCircle } from "react-icons/fa";
 import { MdOutlineMeetingRoom } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Avatar } from "antd";
-import { localStorageServices } from "../../services/localStorageServices";
 
 export default function HomeMobileNavHeader() {
   let userInfor = useSelector((state) => state.userSlice.userInfor);
   let userAvatar = useSelector((state) => state.userSlice.avatar);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -41,7 +43,7 @@ export default function HomeMobileNavHeader() {
                 to={`/booked/${userInfor?._id}`}
               >
                 <MdOutlineMeetingRoom size={30} color="#a0a0a0" />
-                <p className="text-xs">Danh sách phòng đã đặt</p>
+                <p className="text-xs">Phòng đã đặt</p>
               </Link>
             </div>
             <div className="flex flex-col items-center justify-center">

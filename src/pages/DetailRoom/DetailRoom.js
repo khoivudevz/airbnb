@@ -46,7 +46,7 @@ export default function DetailRoom() {
   return loading ? (
     <Loading />
   ) : (
-    <div className="my-32">
+    <div className="my-32 overflow-hidden">
       <div className="container mx-auto fontFace">
         <div className="mb-10">
           <div className="mx-[50px] xl:mx-[100px] text-2xl font-bold flex items-center space-x-3">
@@ -86,7 +86,7 @@ export default function DetailRoom() {
           </div>
           <BookingRoom data={data} id={id} />
         </div>
-        <div className="lg:ml-[50px] xl:ml-[173px] w-[770px]">
+        <div className=" w-[300px] xl:ml-[173px] xl:w-[770px]">
           <div className="space-y-5 flex flex-col items-start justify-center text-lg border-b-2 border-b-gray py-5 w-[300px] ml-20px] md:mx-[30px] md:w-[700px] xl:w-[1000px] mx-[20px]">
             <div className="flex items-center justify-start space-x-3">
               <div>

@@ -54,7 +54,7 @@ export default function BookingRoom({ data, id }) {
       <div className="flex items-center justify-center m-5 cursor-pointer">
         <div
           onClick={handleBooking}
-          className="w-[350px] h-[53px] bg-hotpink rounded-xl text-white flex items-center justify-center"
+          className="w-[350px] h-[53px] bg-hotpink shadow-xl hover:bg-white hover:text-hotpink transition-all rounded-xl text-white flex items-center justify-center"
         >
           <p className="text-lg">Đặt phòng</p>
         </div>

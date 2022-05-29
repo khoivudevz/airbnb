@@ -30,8 +30,8 @@ export default function Home() {
         <p className="text-4xl font-bold">
           Cảm hứng cho chuyến đi tiếp theo của bạn
         </p>
-        <div className="flex flex-col space-y-10  items-center justify-center sm:grid sm:space-y-0 lg:p-[107px] xl:p-0 sm:grid-cols-2 xl:grid-cols-4 gap-x-20 my-20">
-          <div className="w-[350px] sm:w-[336px] lg:w-[350px] h-[504px] rounded-xl ">
+        <div className="flex flex-col space-y-10  items-center justify-center sm:grid sm:space-y-0 md:gap-y-10 lg:p-[107px] xl:p-0 sm:grid-cols-2 xl:grid-cols-4 gap-x-20 my-20">
+          <div className="w-[350px] sm:w-[336px] lg:w-[350px] h-[504px] rounded-xl hover:-translate-y-5 cursor-pointer transition-all">
             <div className="w-full h-1/2">
               <img
                 src="https://a0.muscache.com/im/pictures/3a7b8005-28b8-48b8-8efa-0a6a00f7d5d8.jpg?im_w=320"
@@ -45,7 +45,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="w-[350px] sm:w-[336px] lg:w-[350px] h-[504px] rounded-xl ">
+          <div className="w-[350px] sm:w-[336px] lg:w-[350px] h-[504px] rounded-xl hover:-translate-y-5 cursor-pointer transition-all">
             <div className="w-full h-1/2">
               <img
                 src="https://a0.muscache.com/im/pictures/aff9e173-b551-44e4-80f3-bd9b9d632f8b.jpg?im_w=320"
@@ -59,7 +59,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="w-[350px] sm:w-[336px] lg:w-[350px] h-[504px] rounded-xl ">
+          <div className="w-[350px] sm:w-[336px] lg:w-[350px] h-[504px] rounded-xl hover:-translate-y-5 cursor-pointer transition-all">
             <div className="w-full h-1/2">
               <img
                 src="https://a0.muscache.com/im/pictures/2f5a15c7-2170-420a-9c48-9ac88a80a7fa.jpg?im_w=320"
@@ -73,7 +73,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="w-[350px] sm:w-[336px] lg:w-[350px] h-[504px] rounded-xl ">
+          <div className="w-[350px] sm:w-[336px] lg:w-[350px] h-[504px] rounded-xl hover:-translate-y-5 cursor-pointer transition-all">
             <div className="w-full h-1/2">
               <img
                 src="https://a0.muscache.com/im/pictures/a1617dd0-7140-4c64-814f-384d174a78be.jpg?im_w=320"
@@ -90,7 +90,7 @@ export default function Home() {
         </div>
         <p className="text-4xl font-bold">Khám phá Trải nghiệm Airbnb</p>
         <div className="flex flex-col items-center justify-center md:grid md:grid-cols-2 gap-x-32 my-20">
-          <div className="w-[311px] h-[464px] lg:w-[459px] lg:h-[566px] xl:w-[790px] xl:h-[800px] relative">
+          <div className="w-[311px] h-[464px] lg:w-[459px] lg:h-[566px] xl:w-[790px] xl:h-[800px] relative hover:-translate-y-5 cursor-pointer transition-all">
             <img
               src="https://a0.muscache.com/im/pictures/c2adcb16-6c3f-4041-86a1-afa9c303c500.jpg?im_w=720"
               alt="photo"
@@ -100,7 +100,7 @@ export default function Home() {
               Những điều nên trải nghiệm trong chuyến đi của bạn
             </p>
           </div>
-          <div className="w-[311px] h-[464px] lg:w-[459px] lg:h-[566px] xl:w-[790px] xl:h-[800px] relative">
+          <div className="w-[311px] h-[464px] lg:w-[459px] lg:h-[566px] xl:w-[790px] xl:h-[800px] relative hover:-translate-y-5 cursor-pointer transition-all">
             <img
               src="https://a0.muscache.com/im/pictures/c1bdf53f-2a19-4529-aa9b-1b0e6bd8d0ee.jpg?im_w=720"
               alt="photo"
@@ -112,7 +112,7 @@ export default function Home() {
           </div>
         </div>
         <div className="flex items-center justify-center">
-          <div className="w-[360px] h-[480px] md:w-[600px] md:h-[750px] lg:w-[1000px] lg:h-[500px] xl:w-[1600px] xl:h-[800px] relative">
+          <div className="w-[340px] h-[480px] md:w-[600px] md:h-[750px] lg:w-[1000px] lg:h-[500px] xl:w-[1600px] xl:h-[800px] relative hover:-translate-y-5 cursor-pointer transition-all">
             <img
               src="https://a0.muscache.com/im/pictures/0528b0f7-4c0c-47bc-9786-d91454f531ba.jpg?im_w=1200"
               alt="photo"

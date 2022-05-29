@@ -20,9 +20,14 @@ export default function NavHeader() {
           </Link>
           <MiniSearchBar />
           <div className="flex items-center justify-center text-black fontFace space-x-4">
-            <div className="flex items-center justify-center text-black fontFace space-x-4">
-              <p>Trở thành chủ nhà</p>
-              <BiWorld size={25} />
+            <div className="flex items-center justify-center text-black fontFace space-x-4 ">
+              <p className="hover:decoration-hotpink hover:decoration-2 hover:underline cursor-pointer transition-all">
+                Trở thành chủ nhà
+              </p>
+              <BiWorld
+                size={25}
+                className="hover:text-hotpink cursor-pointer transition-all"
+              />
             </div>
             {userInfor ? <UserNavHeaderLogin /> : <UserNavHeader />}
           </div>

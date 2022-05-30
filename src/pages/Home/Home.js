@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import SearchBar from "../../Components/SearchBar/SearchBar";
 import image from "../../assets/images/933-1600x700.jpg";
-
+import TypeAnimation from "react-type-animation";
+import { Link } from "react-router-dom";
 export default function Home() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -20,7 +21,20 @@ export default function Home() {
                 className="rounded-xl w-full h-full object-cover"
               />
               <p className="fontFace text-2xl font-bold text-white absolute bottom-5 left-[4%] sm:left-[25%] lg:left-[33%] xl:left-[40%]">
-                Hãy để trí tò mò của bạn dẫn lối
+                <TypeAnimation
+                  cursor={true}
+                  sequence={[
+                    "Hãy để trí tò mò của bạn dẫn lối! ",
+                    2000,
+                    "Tận hưởng chuyến hành trình tuyệt vời! ",
+                    2000,
+                    "Thoải mái lựa chọn nơi ở theo ý muốn! ",
+                    2000,
+                  ]}
+                  wrapper="h2"
+                  repeat={Infinity}
+                  className="text-white text-3xl"
+                />
               </p>
             </div>
           </div>
@@ -31,62 +45,70 @@ export default function Home() {
           Cảm hứng cho chuyến đi tiếp theo của bạn
         </p>
         <div className="flex flex-col space-y-10  items-center justify-center sm:grid sm:space-y-0 md:gap-y-10 lg:p-[107px] xl:p-0 sm:grid-cols-2 xl:grid-cols-4 gap-x-20 my-20">
-          <div className="w-[350px] sm:w-[336px] lg:w-[350px] h-[504px] rounded-xl hover:-translate-y-5 cursor-pointer transition-all">
-            <div className="w-full h-1/2">
-              <img
-                src="https://a0.muscache.com/im/pictures/3a7b8005-28b8-48b8-8efa-0a6a00f7d5d8.jpg?im_w=320"
-                alt="photo"
-                className="object-cover w-full h-full rounded-t-xl"
-              />
+          <Link to="/rooms">
+            <div className="w-[350px] sm:w-[336px] lg:w-[350px] h-[504px] rounded-xl hover:-translate-y-5 cursor-pointer transition-all">
+              <div className="w-full h-1/2">
+                <img
+                  src="https://a0.muscache.com/im/pictures/3a7b8005-28b8-48b8-8efa-0a6a00f7d5d8.jpg?im_w=320"
+                  alt="photo"
+                  className="object-cover w-full h-full rounded-t-xl"
+                />
+              </div>
+              <div className="w-full h-1/2 bg-purple rounded-b-xl">
+                <p className="text-white text-3xl font-bold pl-4 pt-5">
+                  Thành phố Đà Lạt
+                </p>
+              </div>
             </div>
-            <div className="w-full h-1/2 bg-purple rounded-b-xl">
-              <p className="text-white text-3xl font-bold pl-4 pt-5">
-                Thành phố Đà Lạt
-              </p>
+          </Link>
+          <Link to="/rooms">
+            <div className="w-[350px] sm:w-[336px] lg:w-[350px] h-[504px] rounded-xl hover:-translate-y-5 cursor-pointer transition-all">
+              <div className="w-full h-1/2">
+                <img
+                  src="https://a0.muscache.com/im/pictures/aff9e173-b551-44e4-80f3-bd9b9d632f8b.jpg?im_w=320"
+                  alt="photo"
+                  className="object-cover w-full h-full rounded-t-xl"
+                />
+              </div>
+              <div className="w-full h-1/2 bg-orangelight rounded-b-xl">
+                <p className="text-white text-3xl font-bold pl-4 pt-5">
+                  Thành phố Vũng Tàu
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="w-[350px] sm:w-[336px] lg:w-[350px] h-[504px] rounded-xl hover:-translate-y-5 cursor-pointer transition-all">
-            <div className="w-full h-1/2">
-              <img
-                src="https://a0.muscache.com/im/pictures/aff9e173-b551-44e4-80f3-bd9b9d632f8b.jpg?im_w=320"
-                alt="photo"
-                className="object-cover w-full h-full rounded-t-xl"
-              />
+          </Link>
+          <Link to="/rooms">
+            <div className="w-[350px] sm:w-[336px] lg:w-[350px] h-[504px] rounded-xl hover:-translate-y-5 cursor-pointer transition-all">
+              <div className="w-full h-1/2">
+                <img
+                  src="https://a0.muscache.com/im/pictures/2f5a15c7-2170-420a-9c48-9ac88a80a7fa.jpg?im_w=320"
+                  alt="photo"
+                  className="object-cover w-full h-full rounded-t-xl"
+                />
+              </div>
+              <div className="w-full h-1/2 bg-orangeblood rounded-b-xl">
+                <p className="text-white text-3xl font-bold pl-4 pt-5">
+                  Thành phố Nha Trang
+                </p>
+              </div>
             </div>
-            <div className="w-full h-1/2 bg-orangelight rounded-b-xl">
-              <p className="text-white text-3xl font-bold pl-4 pt-5">
-                Thành phố Vũng Tàu
-              </p>
+          </Link>
+          <Link to="/rooms">
+            <div className="w-[350px] sm:w-[336px] lg:w-[350px] h-[504px] rounded-xl hover:-translate-y-5 cursor-pointer transition-all">
+              <div className="w-full h-1/2">
+                <img
+                  src="https://a0.muscache.com/im/pictures/a1617dd0-7140-4c64-814f-384d174a78be.jpg?im_w=320"
+                  alt="photo"
+                  className="object-cover w-full h-full rounded-t-xl"
+                />
+              </div>
+              <div className="w-full h-1/2 bg-purple rounded-b-xl">
+                <p className="text-white text-3xl font-bold pl-4 pt-5">
+                  Thành phố Huế
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="w-[350px] sm:w-[336px] lg:w-[350px] h-[504px] rounded-xl hover:-translate-y-5 cursor-pointer transition-all">
-            <div className="w-full h-1/2">
-              <img
-                src="https://a0.muscache.com/im/pictures/2f5a15c7-2170-420a-9c48-9ac88a80a7fa.jpg?im_w=320"
-                alt="photo"
-                className="object-cover w-full h-full rounded-t-xl"
-              />
-            </div>
-            <div className="w-full h-1/2 bg-orangeblood rounded-b-xl">
-              <p className="text-white text-3xl font-bold pl-4 pt-5">
-                Thành phố Nha Trang
-              </p>
-            </div>
-          </div>
-          <div className="w-[350px] sm:w-[336px] lg:w-[350px] h-[504px] rounded-xl hover:-translate-y-5 cursor-pointer transition-all">
-            <div className="w-full h-1/2">
-              <img
-                src="https://a0.muscache.com/im/pictures/a1617dd0-7140-4c64-814f-384d174a78be.jpg?im_w=320"
-                alt="photo"
-                className="object-cover w-full h-full rounded-t-xl"
-              />
-            </div>
-            <div className="w-full h-1/2 bg-purple rounded-b-xl">
-              <p className="text-white text-3xl font-bold pl-4 pt-5">
-                Thành phố Huế
-              </p>
-            </div>
-          </div>
+          </Link>
         </div>
         <p className="text-4xl font-bold">Khám phá Trải nghiệm Airbnb</p>
         <div className="flex flex-col items-center justify-center md:grid md:grid-cols-2 gap-x-32 my-20">

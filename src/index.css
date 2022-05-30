@@ -42,6 +42,11 @@ input:focus {
   padding: 16px 17px 17px !important;
   border-radius: 10px !important;
 }
+@media (max-width: 576px) {
+  .ant-picker-panels {
+    flex-direction: column;
+  }
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

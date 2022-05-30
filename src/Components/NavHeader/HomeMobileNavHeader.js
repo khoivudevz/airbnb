@@ -17,10 +17,10 @@ export default function HomeMobileNavHeader() {
       <div className=" h-20 w-full fixed top-0 z-10 ">
         <div className="container mx-auto w-full h-full">
           <div className="flex items-center justify-center w-full h-full">
-            <div className="bg-white rounded-full w-11/12 h-4/6 shadow-xl">
+            <div className="bg-white hover:bg-hotpink rounded-full w-11/12 h-4/6 shadow-xl">
               <Link to="/rooms">
-                <div className="w-full h-full flex items-center justify-center space-x-3">
-                  <FaSearch color="red" />
+                <div className="w-full h-full text-hotpink hover:text-white flex items-center justify-center space-x-3">
+                  <FaSearch />
                   <p className="fontFace font-bold">Bạn sắp đi đâu?</p>
                 </div>
               </Link>
@@ -33,8 +33,10 @@ export default function HomeMobileNavHeader() {
           <div className="grid grid-cols-3 w-full h-full fontFace">
             <div className="flex flex-col items-center justify-center">
               <Link to="/rooms">
-                <FaSearch size={20} color="#a0a0a0" />
-                <p className="text-xs">Khám phá</p>
+                <div className="text-black hover:text-hotpink flex flex-col items-center justify-center">
+                  <FaSearch size={20} />
+                  <p className="text-xs">Khám phá</p>
+                </div>
               </Link>
             </div>
             <div className="flex flex-col items-center justify-center">
@@ -42,22 +44,24 @@ export default function HomeMobileNavHeader() {
                 className="flex flex-col items-center justify-center"
                 to={`/booked/${userInfor?._id}`}
               >
-                <MdOutlineMeetingRoom size={30} color="#a0a0a0" />
-                <p className="text-xs">Phòng đã đặt</p>
+                <div className="text-black hover:text-hotpink flex flex-col items-center justify-center">
+                  <MdOutlineMeetingRoom size={30} />
+                  <p className="text-xs">Phòng đã đặt</p>
+                </div>
               </Link>
             </div>
             <div className="flex flex-col items-center justify-center">
               {userInfor ? (
                 <Link to="/muser">
-                  <div className="flex flex-col items-center justify-center">
+                  <div className="flex flex-col items-center justify-center text-black hover:text-hotpink ">
                     <Avatar src={userAvatar} />
                     <p className="text-xs">Hồ sơ</p>
                   </div>
                 </Link>
               ) : (
                 <Link to="/login">
-                  <div className="flex flex-col items-center justify-center">
-                    <FaRegUserCircle size={30} color="#a0a0a0" />
+                  <div className="flex flex-col items-center justify-center text-black hover:text-hotpink">
+                    <FaRegUserCircle size={30} />
                     <p className="text-xs">Đăng nhập</p>
                   </div>
                 </Link>

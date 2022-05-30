@@ -1,10 +1,15 @@
+import { Player } from "@lottiefiles/react-lottie-player";
 import React from "react";
-import ReactLoading from "react-loading";
-
+import LoadingJson from "../../assets/loading/loading.json";
 export default function Loading() {
   return (
     <div className="fixed h-screen w-screen bg-white flex items-center justify-center z-10">
-      <ReactLoading type="spinningBubbles" color="#ff385c" />
+      <Player
+        autoplay
+        loop
+        src={LoadingJson}
+        style={{ height: "300px", width: "300px" }}
+      ></Player>
     </div>
   );
 }

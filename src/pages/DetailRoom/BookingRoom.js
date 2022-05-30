@@ -45,11 +45,7 @@ export default function BookingRoom({ data, id }) {
         </div>
       </div>
       <div className="flex items-center justify-center">
-        <RangePicker
-          showTime={{ format: "HH:mm" }}
-          format="YYYY-MM-DD HH:mm"
-          onChange={onChange}
-        />
+        <RangePicker onChange={onChange} />
       </div>
       <div className="flex items-center justify-center m-5 cursor-pointer">
         <div

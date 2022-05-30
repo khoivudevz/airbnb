@@ -43,6 +43,9 @@ export default function FormUpdateRoom({ data, id }) {
           "Tiến hành tải lại trang!",
           "success"
         );
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
       } else if (info.file.status === "error") {
         message.error("Cập nhật ảnh đại diện thất bại");
       }

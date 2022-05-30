@@ -91,8 +91,8 @@ export default function UserNavHeaderLogin() {
       <Dropdown overlay={menu} trigger={["click"]}>
         <a onClick={(e) => e.preventDefault()}>
           <Space>
-            <button className="bg-white w-[77px] h-[42px] rounded-full flex items-center justify-center space-x-2 shadow-xl">
-              <BiMenu color="grey" size={20} />
+            <button className="bg-white hover:bg-hotpink hover:text-white transition-all w-[77px] h-[42px] rounded-full flex items-center justify-center space-x-2 shadow-xl">
+              <BiMenu size={20} />
               <Avatar
                 src={
                   userAvatar ? userAvatar : "https://joeschmoe.io/api/v1/random"

@@ -45,7 +45,10 @@ export default function BookingRoom({ data, id }) {
         </div>
       </div>
       <div className="flex items-center justify-center">
-        <RangePicker onChange={onChange} />
+        <RangePicker
+          onChange={onChange}
+          placeholder={["Nhận phòng", "Trả phòng"]}
+        />
       </div>
       <div className="flex items-center justify-center m-5 cursor-pointer">
         <div

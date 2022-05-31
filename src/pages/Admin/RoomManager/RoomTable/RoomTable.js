@@ -1,13 +1,10 @@
 import React from "react";
-import { Table, Tag, Space } from "antd";
-import Swal from "sweetalert2";
-import { BsGearWide } from "react-icons/bs";
 import { TiDelete } from "react-icons/ti";
+import Swal from "sweetalert2";
 import { roomServices } from "../../../../services/roomServices";
 import UpdateRoom from "../UpdateRoom/UpdateRoom";
-export default function RoomTable({ data }) {
-  const { Column } = Table;
 
+export default function RoomTable({ data }) {
   const handleDeleteRoom = (id) => {
     roomServices
       .deleteRoom(id)
@@ -21,48 +18,41 @@ export default function RoomTable({ data }) {
         console.log("err", err);
       });
   };
-
   return (
-    <Table dataSource={data}>
-      <Column title="ID" dataIndex="_id" key="_id" />
-      <Column title="Tên phòng" dataIndex="name" key="name" />
-      <Column
-        title="Hình ảnh"
-        dataIndex={data?.image}
-        render={(text, record) => {
-          return (
-            <img
-              src={
-                record.image
-                  ? record.image
-                  : "https://airbnb.cybersoft.edu.vn/public/images/room/1634308467196_camtienhotel.jpg"
-              }
-              alt={record.name}
-            />
-          );
-        }}
-      />
-      <Column title="GuessMax" dataIndex="guests" key="guests" />
-
-      <Column
-        title={<BsGearWide />}
-        key="action"
-        render={(text, record) => (
-          <Space size="middle">
-            <button>
-              <UpdateRoom data={record} id={record._id} />
-            </button>
-            <button
-              onClick={() => {
-                handleDeleteRoom(record._id);
-              }}
-              className="bg-deepblue text-white  px-4 py-2 rounded-full"
-            >
-              <TiDelete size={20} />
-            </button>
-          </Space>
-        )}
-      />
-    </Table>
+    <>
+      <td className="hidden lg:flex lg:h-[263px] items-center justify-center">
+        <div className="flex items-center justify-center">
+          <p>{data?._id}</p>
+        </div>
+      </td>
+      <td>
+        <div className="flex items-center justify-center">
+          <p>{data?.name}</p>
+        </div>
+      </td>
+      <td>
+        <img
+          src={
+            data?.image
+              ? data?.image
+              : "https://airbnb.cybersoft.edu.vn/public/temp/1636703587023_ve-dep-bien-nha-trang.jpg"
+          }
+          alt="image"
+        />
+      </td>
+      <td className="flex h-[263px] items-center justify-center">
+        <button>
+          <UpdateRoom data={data} id={data._id} />
+        </button>
+        <button
+          onClick={() => {
+            handleDeleteRoom(data._id);
+          }}
+          className="bg-deepblue text-white  px-4 py-2 rounded-full"
+        >
+          <TiDelete size={20} />
+        </button>
+      </td>
+    </>
   );
 }

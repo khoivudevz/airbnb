@@ -16,7 +16,7 @@ import RoomManager from "../../Admin/RoomManager/RoomManager";
 import UserManager from "../UserManager/UserManager";
 import LocationManager from "../../Admin/LocationManager/LocationManager";
 const { TabPane } = Tabs;
-export default function AdminHome() {
+export default function MobileAdminHome() {
   let dispatch = useDispatch();
   let navigate = useNavigate();
   let adminInfor = useSelector((state) => state.adminSlice.adminInfor);
@@ -89,7 +89,7 @@ export default function AdminHome() {
         <div></div>
       </div>
       <div className="h-[90%] py-20">
-        <Tabs onChange={callback} type="card" tabPosition="left">
+        <Tabs onChange={callback} type="card">
           <TabPane tab="Quản lý người dùng" key="1">
             <UserManager />
           </TabPane>

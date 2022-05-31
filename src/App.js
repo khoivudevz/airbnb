@@ -14,8 +14,7 @@ import AllLocation from "./pages/AllLocation/AllLocation";
 import MobileUserSelect from "./pages/MobileUserSelect/MobileUserSelect";
 import DetailRoom from "./pages/DetailRoom/DetailRoom";
 import BookedRoomList from "./pages/BookedRoomList/BookedRoomList";
-import AdminHome from "./pages/Admin/AdminHome/AdminHome";
-import Admin from "./pages/Admin/Admin";
+import AdminLayout from "./template/AdminLayout";
 function App() {
   return (
     <>
@@ -47,8 +46,7 @@ function App() {
             path="/muser"
             element={<Layout Components={MobileUserSelect} />}
           />
-          <Route path="/admin" element={<Admin />} />
-          <Route path="/admin/home" element={<AdminHome />} />
+          <Route path="/admin" element={<AdminLayout />} />
         </Routes>
       </BrowserRouter>
     </>

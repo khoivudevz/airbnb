@@ -60,9 +60,9 @@ export default function FormUpdateInfor({ data, id }) {
             message: "Vui lòng nhập tên người dùng!",
           },
         ]}
-        initialValue={data.name}
+        initialValue={data?.name}
       >
-        <Input defaultValue={data.name} />
+        <Input defaultValue={data?.name} />
       </Form.Item>
       <Form.Item
         label="Email"
@@ -73,9 +73,9 @@ export default function FormUpdateInfor({ data, id }) {
             message: "Vui lòng nhập email!",
           },
         ]}
-        initialValue={data.email}
+        initialValue={data?.email}
       >
-        <Input defaultValue={data.email} />
+        <Input defaultValue={data?.email} />
       </Form.Item>
 
       <Form.Item
@@ -87,9 +87,9 @@ export default function FormUpdateInfor({ data, id }) {
             message: "Vui lòng nhập số điện thoại!",
           },
         ]}
-        initialValue={data.phone}
+        initialValue={data?.phone}
       >
-        <Input defaultValue={data.phone} />
+        <Input defaultValue={data?.phone} />
       </Form.Item>
 
       <Form.Item
@@ -145,9 +145,9 @@ export default function FormUpdateInfor({ data, id }) {
             message: "Vui lòng nhập địa chỉ!",
           },
         ]}
-        initialValue={data.address}
+        initialValue={data?.address}
       >
-        <Input defaultValue={data.address} />
+        <Input defaultValue={data?.address} />
       </Form.Item>
 
       <Form.Item

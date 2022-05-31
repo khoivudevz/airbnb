@@ -10,11 +10,11 @@ export default function MiniSearchBar() {
   const [locationList, setlocationList] = useState(null);
 
   const onChange = (value) => {
-    console.log(`selected ${value}`);
+    // console.log(`selected ${value}`);
   };
 
   const onSearch = (value) => {
-    console.log("search:", value);
+    // console.log("search:", value);
   };
 
   useEffect(() => {

@@ -1,13 +1,13 @@
 import React from "react";
+import UpdateInfor from "./UpdateForm/UpdateInfor";
 import { TiDelete } from "react-icons/ti";
 import Swal from "sweetalert2";
-import { locationServices } from "../../../../services/locationServices";
-import UpdateLocation from "../UpdateLocation/UpdateLocation";
+import { userManageServices } from "../../../../services/userMangeServices";
 
-export default function LocationTable({ data }) {
-  const handleDeleteLocaion = (id) => {
-    locationServices
-      .deleteLocation(id)
+export default function UserItem({ data }) {
+  const handleDeleteUser = (id) => {
+    userManageServices
+      .deleteUser(id)
       .then((res) => {
         Swal.fire("Xóa thành công!", "Tiến hành tải lại trang!", "success");
         setTimeout(() => {
@@ -20,33 +20,23 @@ export default function LocationTable({ data }) {
   };
   return (
     <>
-      <td className="hidden lg:flex lg:h-[263px] items-center justify-center">
+      <td className="hidden lg:block">
         <div className="flex items-center justify-center">
           <p>{data?._id}</p>
         </div>
       </td>
       <td>
         <div className="flex items-center justify-center">
-          <p>{data?.province}</p>
+          <p>{data?.email}</p>
         </div>
       </td>
-      <td>
-        <img
-          src={
-            data?.image
-              ? data?.image
-              : "https://airbnb.cybersoft.edu.vn/public/temp/1636703587023_ve-dep-bien-nha-trang.jpg"
-          }
-          alt="image"
-        />
-      </td>
-      <td className="flex h-[263px] items-center justify-center">
+      <td className="flex items-center justify-center">
         <button>
-          <UpdateLocation data={data} id={data._id} />
+          <UpdateInfor data={data} id={data._id} />
         </button>
         <button
           onClick={() => {
-            handleDeleteLocaion(data._id);
+            handleDeleteUser(data._id);
           }}
           className="bg-deepblue text-white  px-4 py-2 rounded-full"
         >

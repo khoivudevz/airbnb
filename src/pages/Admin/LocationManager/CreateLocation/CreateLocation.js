@@ -43,7 +43,7 @@ export default function CreateLocation() {
         type="primary"
         onClick={showModal}
       >
-        Tạo phòng cho thuê
+        Tạo vị trí
       </div>
       <Modal
         title="Tạo vị trí"

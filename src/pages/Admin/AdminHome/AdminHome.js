@@ -23,7 +23,7 @@ export default function AdminHome() {
   let adminAvatar = useSelector((state) => state.adminSlice.adminAvatar);
 
   useEffect(() => {
-    if (adminInfor.type !== "ADMIN") {
+    if (adminInfor?.type !== "ADMIN") {
       dispatch(removeAdminInfor());
       localStorageServices.removeAdminInfor();
       dispatch(removeAdminToken());

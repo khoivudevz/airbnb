@@ -47,7 +47,7 @@ export default function BookedRoomItem({ data }) {
           </div>
         </div>
         <div className="absolute left-4 bottom-0 my-3 space-x-1">
-          <Link to={`/room/${data?.roomId._id}`}>
+          <Link to={`/room/${data?.roomId?._id}`}>
             <button className="bg-deepblue text-white px-3 py-2 rounded-xl">
               Thông tin phòng chi tiết
             </button>
